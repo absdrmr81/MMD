@@ -651,6 +651,9 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="PXk-Wa-wpW" kind="custom" customClass="SWRevealViewControllerSegue" id="c6K-yV-hyQ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
