@@ -36,7 +36,7 @@
 {
     [super viewDidLoad];
     
-//    self.title = @"Home";
+    self.title = @"Home";
     
     //Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
