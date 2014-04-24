@@ -30,13 +30,12 @@
     NSString *ownerLName = [self.ownerLastNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *dogName = [self.dogNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
-    PFObject *names = [PFUser currentUser];
-    names[@"ownerFName"] = self.ownerFirstNameField.text;
-    names[@"ownerLName"] = self.ownerLastNameField.text;
-    names[@"dogName"] = self.dogNameField.text;
+    PFObject *currentUser = [PFUser currentUser];
+    currentUser[@"ownerFName"] = self.ownerFirstNameField.text;
+    currentUser[@"ownerLName"] = self.ownerLastNameField.text;
+    currentUser[@"dogName"] = self.dogNameField.text;
     
-    [names saveInBackground];
-
+    [currentUser saveInBackground];
     
     if ([ownerFName length] == 0 || [ownerLName length] == 0 || [dogName length] == 0)
     {

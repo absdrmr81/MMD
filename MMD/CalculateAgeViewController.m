@@ -40,13 +40,13 @@
 {
     NSString *age = [self.dogAgeField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
    
-    PFObject *dogAge = [PFUser currentUser];
+    PFObject *currentUser = [PFUser currentUser];
     NSString *retrievedCalculatedAgeField = self.calculatedAgeField.text;
     int convertAgeToInt = [retrievedCalculatedAgeField intValue];
     self.calculatedAgeField.text = [NSString stringWithFormat:@"%d", convertAgeToInt];
-    dogAge[@"dogAge"] = self.calculatedAgeField.text;
+    currentUser[@"dogAge"] = self.calculatedAgeField.text;
     
-    [dogAge saveInBackground];
+    [currentUser saveInBackground];
 
     if ([age length] == 0)
     {

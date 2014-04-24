@@ -45,10 +45,10 @@
 
 - (IBAction)saveBreed:(id)sender
 {
-    PFObject *dogBreed = [PFUser currentUser];
-    dogBreed[@"dogBreed"] = self.breeds;
+    PFObject *currentUser = [PFUser currentUser];
+    currentUser[@"dogBreed"] = self.breeds;
     
-    [dogBreed saveInBackground];
+    [currentUser saveInBackground];
 }
 
 @end

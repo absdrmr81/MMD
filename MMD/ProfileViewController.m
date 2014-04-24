@@ -29,8 +29,8 @@
     //Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    PFUser *currentUser = [PFUser currentUser];
-//    names[@"dogName"] = self.dogNameLabel.text;
+    PFUser *currentUser = [PFUser currentUser];    
+    currentUser[@"dogName"] = self.dogNameLabel.text;
 
     if (currentUser)
     {
@@ -40,7 +40,6 @@
     {
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
-    
 }
 
 - (IBAction)logOut:(id)sender
