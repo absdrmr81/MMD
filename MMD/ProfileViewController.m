@@ -20,6 +20,7 @@
 {
     [super viewDidLoad];
     
+    //This is a comment
     self.title = @"Home";
     
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
