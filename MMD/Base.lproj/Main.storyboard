@@ -576,7 +576,7 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="840FAAC8-2652-4243-A919-AE1125DA8CBD" translatesAutoresizingMaskIntoConstraints="NO" id="pcH-Bn-nGH">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="doghouse.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="pcH-Bn-nGH">
                                             <rect key="frame" x="20" y="6" width="56" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -600,7 +600,7 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="F8EFCC04-03CE-4265-A836-95FBB1581F15" translatesAutoresizingMaskIntoConstraints="NO" id="mi8-GM-U66">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DogBio.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="mi8-GM-U66">
                                             <rect key="frame" x="20" y="6" width="56" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -624,7 +624,7 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="4CA31EF3-9F8A-4EA7-BD31-B85F656A8AA5" translatesAutoresizingMaskIntoConstraints="NO" id="Dj0-s6-XzY">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Dogstudio.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Dj0-s6-XzY">
                                             <rect key="frame" x="20" y="6" width="56" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -645,7 +645,7 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="4E2908AC-FD32-4F19-8C71-AD19E973F5E8" translatesAutoresizingMaskIntoConstraints="NO" id="6zK-Ss-q54">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="google-maps-icon.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="6zK-Ss-q54">
                                             <rect key="frame" x="20" y="6" width="52" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -713,13 +713,9 @@
         <image name="1pup" width="704" height="593"/>
         <image name="2pup" width="662" height="769"/>
         <image name="3pup" width="1054" height="989"/>
-        <image name="4CA31EF3-9F8A-4EA7-BD31-B85F656A8AA5" width="704" height="593"/>
-        <image name="4E2908AC-FD32-4F19-8C71-AD19E973F5E8" width="704" height="593"/>
         <image name="4pup" width="1333" height="1295"/>
         <image name="DogBio.jpg" width="350" height="350"/>
         <image name="Dogstudio.jpg" width="512" height="512"/>
-        <image name="840FAAC8-2652-4243-A919-AE1125DA8CBD" width="704" height="593"/>
-        <image name="F8EFCC04-03CE-4265-A836-95FBB1581F15" width="704" height="593"/>
         <image name="appIcon" width="2048" height="1536"/>
         <image name="doghouse.jpg" width="321" height="374"/>
         <image name="google-maps-icon.jpg" width="450" height="311"/>
