@@ -36,7 +36,17 @@
 {
     [super viewDidLoad];
     
-    self.title = @"Home";
+    CLLocationCoordinate2D zoomLocation;
+    zoomLocation.latitude = 41.8819;
+    zoomLocation.latitude = -87.6278;
+    
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 6, 6);
+    MKCoordinateRegion adjustedRegion = [_mapView regionThatFits:viewRegion];
+    [_mapView setRegion:adjustedRegion animated:YES];
+    
+    _mapView.delegate = self;
+    
+//    self.title = @"Home";
     
     //Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];

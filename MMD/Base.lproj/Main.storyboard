@@ -663,6 +663,30 @@
             </objects>
             <point key="canvasLocation" x="299" y="-76"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="EZX-XF-LfF">
+            <objects>
+                <viewController id="PXk-Wa-wpW" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pxn-cl-gfd"/>
+                        <viewControllerLayoutGuide type="bottom" id="jGr-li-F91"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SCc-rt-cuI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tM2-Vz-b54">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S9B-rM-NPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="166"/>
+        </scene>
         <!--Photo View Controller-->
         <scene sceneID="aTe-NU-fwp">
             <objects>
@@ -688,7 +712,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAi-DR-Lh4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="867" y="646"/>
+            <point key="canvasLocation" x="645" y="652"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="U8h-hh-eA6">
