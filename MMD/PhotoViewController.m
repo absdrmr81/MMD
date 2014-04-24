@@ -20,6 +20,7 @@
 {
     [super viewDidLoad];
 
+    //This is a new comment
     // Add pan gesture to hide the sidebar
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 

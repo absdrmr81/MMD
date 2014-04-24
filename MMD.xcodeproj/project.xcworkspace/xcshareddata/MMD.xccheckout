@@ -5,36 +5,48 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>A0286357-A241-45ED-8278-1F47204E4501</string>
+	<string>31CD81DB-AF66-4F4E-A7BB-22D49E8FBE96</string>
 	<key>IDESourceControlProjectName</key>
 	<string>MMD</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>F3E7BC38-2B5A-40BA-A9E2-BB5FC718A696</key>
-		<string>https://github.com/absdrmr81/MeetMyDog.git</string>
+		<key>9AB6991A-2B98-40E4-8740-74E452BCD70F</key>
+		<string>https://github.com/absdrmr81/MMD.git</string>
+		<key>E0BE4CA7-74A8-4D1E-A579-9D78C0CA9D84</key>
+		<string>https://github.com/absdrmr81/MMD.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>MMD.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>F3E7BC38-2B5A-40BA-A9E2-BB5FC718A696</key>
+		<key>9AB6991A-2B98-40E4-8740-74E452BCD70F</key>
+		<string>../../../../../drmrboy/MobileMakersDir/MMD</string>
+		<key>E0BE4CA7-74A8-4D1E-A579-9D78C0CA9D84</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/absdrmr81/MeetMyDog.git</string>
+	<string>https://github.com/absdrmr81/MMD.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>F3E7BC38-2B5A-40BA-A9E2-BB5FC718A696</string>
+	<string>E0BE4CA7-74A8-4D1E-A579-9D78C0CA9D84</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>F3E7BC38-2B5A-40BA-A9E2-BB5FC718A696</string>
+			<string>E0BE4CA7-74A8-4D1E-A579-9D78C0CA9D84</string>
 			<key>IDESourceControlWCCName</key>
-			<string>MeetMyDog</string>
+			<string>MMD</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9AB6991A-2B98-40E4-8740-74E452BCD70F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MMD</string>
 		</dict>
 	</array>
 </dict>
