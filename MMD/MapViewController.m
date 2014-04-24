@@ -185,25 +185,25 @@
     [super viewWillAppear:NO];
 }
 
-- (IBAction)logOut:(id)sender
-{
-    [PFUser logOut];
-    [self performSegueWithIdentifier:@"showLogin" sender:self];
-}
+//- (IBAction)logOut:(id)sender
+//{
+//    [PFUser logOut];
+//    [self performSegueWithIdentifier:@"showLogin" sender:self];
+//}
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"showLogin"])
-    {
-        [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
-    }
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([segue.identifier isEqualToString:@"showLogin"])
+//    {
+//        [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
+//    }
+//}
 
-- (IBAction)unwindToMapViewController:(UIStoryboardSegue *)sender
-{
-    BreedViewController *source;
-    source = [sender sourceViewController];
-}
+//- (IBAction)unwindToMapViewController:(UIStoryboardSegue *)sender
+//{
+//    BreedViewController *source;
+//    source = [sender sourceViewController];
+//}
 
 //- (IBAction)unwindToMapView:(UIStoryboardSegue *)sender
 //{
