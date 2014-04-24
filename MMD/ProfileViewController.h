@@ -10,6 +10,10 @@
 
 @interface ProfileViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UILabel *dogNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *dogAgeLabel;
+@property (strong, nonatomic) NSString *dogNameString;
+
 - (IBAction)logOut:(id)sender;
 
 

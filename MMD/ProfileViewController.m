@@ -21,6 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.dogNameLabel.text = self.dogNameString;
     
     //This is a comment 
     self.title = @"Profile";
@@ -29,6 +30,8 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     PFUser *currentUser = [PFUser currentUser];
+//    names[@"dogName"] = self.dogNameLabel.text;
+
     if (currentUser)
     {
         NSLog(@"Current user: %@", currentUser.username);
