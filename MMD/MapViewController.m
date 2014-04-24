@@ -15,6 +15,8 @@
 
 
 
+
+
 @interface MapViewController () <CLLocationManagerDelegate>
 {
     CLLocationManager *localManager;
@@ -37,8 +39,12 @@
 {
     [super viewDidLoad];
     
+    
+    
     //Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    
     
     PFUser *currentUser = [PFUser currentUser];
     if (currentUser)
@@ -93,6 +99,12 @@
         }
     }];
     
+    PFQuery *Location = [PFUser query];
+    [Location selectKeys:@[@"currentLocation",]];
+    [Location findObjectsInBackgroundWithBlock:^(NSArray *location, NSError *error) {
+        
+    }];
+    
     
     MKMapView * map = [[MKMapView alloc] initWithFrame:self.view.bounds];
 //    map.delegate = self;
@@ -113,6 +125,7 @@
     localManager.desiredAccuracy = kCLLocationAccuracyBest;
     [localManager startUpdatingLocation];
 }
+
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {

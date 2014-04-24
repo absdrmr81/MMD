@@ -685,6 +685,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="tM2-Vz-b54" id="gRJ-SB-MKN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S9B-rM-NPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
