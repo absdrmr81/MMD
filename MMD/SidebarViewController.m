@@ -18,6 +18,15 @@
 
 @implementation SidebarViewController
 
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        //Custom initialization
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -43,18 +52,20 @@
 //        NSString *photoFilename = [NSString stringWithFormat:@"%@_photo.jpg", [_menuItems objectAtIndex:indexPath.row]];
 //        photoController.photoFilename = photoFilename;
 //    }
-//    
-//    if ( [segue isKindOfClass: [SWRevealViewControllerSegue class]] ) {
-//        SWRevealViewControllerSegue *swSegue = (SWRevealViewControllerSegue*) segue;
-//        
-//        swSegue.performBlock = ^(SWRevealViewControllerSegue* rvc_segue, UIViewController* svc, UIViewController* dvc) {
-//            
-//            UINavigationController* navController = (UINavigationController*)self.revealViewController.frontViewController;
-//            [navController setViewControllers: @[dvc] animated: NO ];
-//            [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
-//        };
+//
     
-//    }
+    //Allow tabs to swing back and forth
+    if ( [segue isKindOfClass: [SWRevealViewControllerSegue class]] ) {
+      SWRevealViewControllerSegue *swSegue = (SWRevealViewControllerSegue*) segue;
+        
+        swSegue.performBlock = ^(SWRevealViewControllerSegue* rvc_segue, UIViewController* svc, UIViewController* dvc) {
+            
+            UINavigationController* navController = (UINavigationController*)self.revealViewController.frontViewController;
+            [navController setViewControllers: @[dvc] animated: NO ];
+            [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
+        };
+    
+    }
     
     
     
