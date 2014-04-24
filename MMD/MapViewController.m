@@ -58,8 +58,8 @@
     
     //define span of map
     MKCoordinateSpan span;
-    span.latitudeDelta = .08;
-    span.longitudeDelta = .08;
+    span.latitudeDelta = .008;
+    span.longitudeDelta = .008;
     
     //define starting point for map
     CLLocationCoordinate2D start;
@@ -109,7 +109,7 @@
     MKMapView * map = [[MKMapView alloc] initWithFrame:self.view.bounds];
 //    map.delegate = self;
     
-    [self.view addSubview:map];
+//    [self.view addSubview:map];
     
     //Call this method
     [self CurrentLocationIdentifier];
