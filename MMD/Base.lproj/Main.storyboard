@@ -716,13 +716,9 @@
         <image name="4CA31EF3-9F8A-4EA7-BD31-B85F656A8AA5" width="704" height="593"/>
         <image name="4E2908AC-FD32-4F19-8C71-AD19E973F5E8" width="704" height="593"/>
         <image name="4pup" width="1333" height="1295"/>
-        <image name="DogBio.jpg" width="350" height="350"/>
-        <image name="Dogstudio.jpg" width="512" height="512"/>
         <image name="840FAAC8-2652-4243-A919-AE1125DA8CBD" width="704" height="593"/>
         <image name="F8EFCC04-03CE-4265-A836-95FBB1581F15" width="704" height="593"/>
         <image name="appIcon" width="2048" height="1536"/>
-        <image name="doghouse.jpg" width="321" height="374"/>
-        <image name="google-maps-icon.jpg" width="450" height="311"/>
         <image name="pup" width="1024" height="768"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
