@@ -714,7 +714,11 @@
         <image name="2pup" width="662" height="769"/>
         <image name="3pup" width="1054" height="989"/>
         <image name="4pup" width="1333" height="1295"/>
+        <image name="DogBio.jpg" width="350" height="350"/>
+        <image name="Dogstudio.jpg" width="512" height="512"/>
         <image name="appIcon" width="2048" height="1536"/>
+        <image name="doghouse.jpg" width="321" height="374"/>
+        <image name="google-maps-icon.jpg" width="450" height="311"/>
         <image name="pup" width="1024" height="768"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
