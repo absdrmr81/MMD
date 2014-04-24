@@ -10,7 +10,7 @@
 
 @interface MapViewController : UIViewController
 
-- (IBAction)logOut:(id)sender;
+//- (IBAction)logOut:(id)sender;
 
 
 @end
