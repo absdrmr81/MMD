@@ -18,9 +18,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.ownerNameLabel.text = self.ownerNameString;
-    self.dogNameLabel1.text = self.dogNameString;
-    self.dogNameLabel2.text = self.dogNameString;
+    self.view.backgroundColor = [UIColor colorWithRed:255/255.0f green:252/255.0f blue:237/255.0f alpha:1.0f];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:132/255.0f green:128/255.0f blue:98/255.0f alpha:1.0f];
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:255/255.0f green:252/255.0f blue:222/255.0f alpha:1.0f];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:255/255.0f green:252/255.0f blue:222/255.0f alpha:1.0f]}];
+    
+    self.dogNameLabel.text = self.dogNameString;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -28,7 +31,7 @@
     if ([segue.identifier isEqualToString:@"ageID"])
     {
         CalculateAgeViewController *cvc = (CalculateAgeViewController *)segue.destinationViewController;
-        cvc.dogNameString = self.dogNameLabel1.text;
+        cvc.dogNameString = self.dogNameLabel.text;
     }
 }
 
