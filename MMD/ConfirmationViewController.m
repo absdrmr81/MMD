@@ -31,7 +31,13 @@
     if ([segue.identifier isEqualToString:@"ageID"])
     {
         CalculateAgeViewController *cvc = (CalculateAgeViewController *)segue.destinationViewController;
-        cvc.dogNameString = self.dogNameLabel.text;
+        
+        NSString *first = self.dogNameString;
+        NSString *second = @"!";
+//        self.fullString = [NSString stringWithFormat:@"%@%@", first, second];
+        cvc.
+        //        cvc.dogNameString = self.dogNameLabel.text;
+
     }
 }
 
