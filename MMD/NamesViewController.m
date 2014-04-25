@@ -21,23 +21,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithRed:255/255.0f green:252/255.0f blue:237/255.0f alpha:1.0f];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:132/255.0f green:128/255.0f blue:98/255.0f alpha:1.0f];
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:255/255.0f green:252/255.0f blue:222/255.0f alpha:1.0f];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:255/255.0f green:252/255.0f blue:222/255.0f alpha:1.0f]}];
+    
     user = [PFUser currentUser];
 }
 
 - (IBAction)saveNames:(id)sender
 {
-    NSString *ownerFName = [self.ownerFirstNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSString *ownerLName = [self.ownerLastNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *dogName = [self.dogNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     PFObject *currentUser = [PFUser currentUser];
-    currentUser[@"ownerFName"] = self.ownerFirstNameField.text;
-    currentUser[@"ownerLName"] = self.ownerLastNameField.text;
+
     currentUser[@"dogName"] = self.dogNameField.text;
     
     [currentUser saveInBackground];
     
-    if ([ownerFName length] == 0 || [ownerLName length] == 0 || [dogName length] == 0)
+    if ([dogName length] == 0)
     {
         UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Oops!" message:@"Make sure you enter your first name, last initial and of course your dog's name." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         
@@ -54,15 +56,12 @@
     if ([segue.identifier isEqualToString:@"showConfirmation"])
     {
         ConfirmationViewController *cvc = (ConfirmationViewController *)segue.destinationViewController;
-        cvc.ownerNameString = self.ownerFirstNameField.text;
         cvc.dogNameString = self.dogNameField.text;
     }
 }
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self.ownerFirstNameField resignFirstResponder];
-    [self.ownerLastNameField resignFirstResponder];
     [self.dogNameField resignFirstResponder];
 }
 

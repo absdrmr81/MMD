@@ -10,10 +10,7 @@
 
 @interface ConfirmationViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UILabel *ownerNameLabel;
-@property (strong, nonatomic) NSString *ownerNameString;
-@property (strong, nonatomic) IBOutlet UILabel *dogNameLabel1;
-@property (strong, nonatomic) IBOutlet UILabel *dogNameLabel2;
+@property (strong, nonatomic) IBOutlet UILabel *dogNameLabel;
 @property (strong, nonatomic) NSString *dogNameString;
-
+@property (strong, nonatomic) NSString *fullString;
 @end
