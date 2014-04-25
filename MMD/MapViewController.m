@@ -17,7 +17,7 @@
 
 
 
-@interface MapViewController () <CLLocationManagerDelegate>
+@interface MapViewController () <CLLocationManagerDelegate, MKMapViewDelegate>
 {
     CLLocationManager *localManager;
     CLLocation *currentLocation;
@@ -38,6 +38,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+//    
+//    MKLocalSearchRequest* request = [[MKLocalSearchRequest alloc] init];
+//    request.naturalLanguageQuery = @"Dog Parks";
+//    request.region = MKCoordinateRegionMake(<#CLLocationCoordinate2D centerCoordinate#>, <#MKCoordinateSpan span#>)
+//    
+//    MKLocalSearch* search = [[MKLocalSearch alloc] initWithRequest:request];
+//    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
+//        Name = response.mapItems; // array of MKMapItems
+//        // .. do you other logic here
+//    }];
+//    
+//
+//    MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
+//    request.naturalLanguageQuery = @"Dog Parks";
+//    request.region = MKCoordinateRegionMakeWithDistance(loc, kSearch, <#CLLocationDistance longitudinalMeters#>)
     
     
     

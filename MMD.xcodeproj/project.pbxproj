@@ -20,6 +20,7 @@
 		26182F7B18FC865E00D5DB61 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26182F5D18FC865E00D5DB61 /* UIKit.framework */; };
 		26182F8318FC865E00D5DB61 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26182F8118FC865E00D5DB61 /* InfoPlist.strings */; };
 		26182F8518FC865E00D5DB61 /* MMDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26182F8418FC865E00D5DB61 /* MMDTests.m */; };
+		26223BD3190AF9040005BD26 /* DogParkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26223BD2190AF9040005BD26 /* DogParkViewController.m */; };
 		9318672A1900663700C9C48A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 931867291900663700C9C48A /* MapKit.framework */; };
 		9346806D18FECC1600B351AD /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9346806C18FECC1600B351AD /* SignUpViewController.m */; };
 		9346807018FECC6100B351AD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9346806F18FECC6100B351AD /* LoginViewController.m */; };
@@ -78,6 +79,8 @@
 		26182F8018FC865E00D5DB61 /* MMDTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MMDTests-Info.plist"; sourceTree = "<group>"; };
 		26182F8218FC865E00D5DB61 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		26182F8418FC865E00D5DB61 /* MMDTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMDTests.m; sourceTree = "<group>"; };
+		26223BD1190AF9040005BD26 /* DogParkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogParkViewController.h; sourceTree = "<group>"; };
+		26223BD2190AF9040005BD26 /* DogParkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogParkViewController.m; sourceTree = "<group>"; };
 		931867291900663700C9C48A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9346806B18FECC1600B351AD /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		9346806C18FECC1600B351AD /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
@@ -205,6 +208,8 @@
 				26182F6B18FC865E00D5DB61 /* Main.storyboard */,
 				935777A4190828C0004D8AAC /* MapViewController.h */,
 				935777A5190828C0004D8AAC /* MapViewController.m */,
+				26223BD1190AF9040005BD26 /* DogParkViewController.h */,
+				26223BD2190AF9040005BD26 /* DogParkViewController.m */,
 				935777A1190827AC004D8AAC /* PhotoViewController.h */,
 				935777A2190827AC004D8AAC /* PhotoViewController.m */,
 				9357779619082094004D8AAC /* SidebarViewController.h */,
@@ -394,6 +399,7 @@
 				93EB069118FF069D00562371 /* MoodViewController.m in Sources */,
 				26182F6618FC865E00D5DB61 /* main.m in Sources */,
 				9386DB2518FE0DF60077D942 /* NamesViewController.m in Sources */,
+				26223BD3190AF9040005BD26 /* DogParkViewController.m in Sources */,
 				9386DB2818FE0E1A0077D942 /* GreetingsViewController.m in Sources */,
 				9346806D18FECC1600B351AD /* SignUpViewController.m in Sources */,
 				93EB068E18FEED6800562371 /* ConfirmationViewController.m in Sources */,
