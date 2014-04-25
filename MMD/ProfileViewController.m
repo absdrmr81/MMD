@@ -30,7 +30,7 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     PFUser *currentUser = [PFUser currentUser];    
-    currentUser[@"dogName"] = self.dogNameLabel.text;
+//    currentUser[@"dogName"] = self.dogNameLabel.text;
 
     if (currentUser)
     {

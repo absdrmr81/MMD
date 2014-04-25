@@ -54,7 +54,10 @@
         
         [alertView show];
     }
-    [self performSegueWithIdentifier:@"showBreeds" sender:self];
+    else
+    {
+        [self performSegueWithIdentifier:@"showBreeds" sender:self];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
