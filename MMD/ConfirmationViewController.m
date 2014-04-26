@@ -35,7 +35,7 @@
         NSString *first = self.dogNameString;
         NSString *second = @"!";
 //        self.fullString = [NSString stringWithFormat:@"%@%@", first, second];
-        cvc.
+        
         //        cvc.dogNameString = self.dogNameLabel.text;
 
     }
