@@ -13,6 +13,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *dogNameLabel;
 @property (strong, nonatomic) NSString *dogNameString;
 @property (strong, nonatomic) IBOutlet UIPickerView *breedPicker;
-@property (strong, nonatomic) NSArray *breeds;
 
 @end

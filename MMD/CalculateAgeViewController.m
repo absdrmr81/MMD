@@ -29,26 +29,35 @@
     user = [PFUser currentUser];
     self.dogNameLabel.text = self.dogNameString;
 }
-
+    
 - (IBAction)calculateDogsAgeButtonPressed:(id)sender
 {
-    NSString *retrievedDogsAgeField = self.dogAgeField.text;
+    NSString *retrievedDogAgeField = self.dogAgeField.text;
     
-    int convertAgetoInt = [retrievedDogsAgeField intValue];
-    
-    int calculatedAge = (((convertAgetoInt -2) * 4) + 21);
-    
-    self.calculatedAgeField.text = [NSString stringWithFormat:@"%d", calculatedAge];
+    if ([retrievedDogAgeField length] == 0)
+    {
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Oops!" message:[NSString stringWithFormat:@"Please put in %@'s age in human years", self.dogNameLabel.text] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        
+        [alertView show];
+    }
+    else
+    {
+        int convertAgetoInt = [retrievedDogAgeField intValue];
+        int calculatedAge = (((convertAgetoInt -2) * 4) + 21);
+        self.calculatedAgeField.text = [NSString stringWithFormat:@"%d", calculatedAge];
+    }
 }
 
 - (IBAction)saveAge:(id)sender
 {
     NSString *age = [self.dogAgeField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-   
-    PFObject *currentUser = [PFUser currentUser];
+    
+    
     NSString *retrievedCalculatedAgeField = self.calculatedAgeField.text;
     int convertAgeToInt = [retrievedCalculatedAgeField intValue];
     self.calculatedAgeField.text = [NSString stringWithFormat:@"%d", convertAgeToInt];
+   
+    PFObject *currentUser = [PFUser currentUser];
     currentUser[@"dogAge"] = self.calculatedAgeField.text;
     
     [currentUser saveInBackground];

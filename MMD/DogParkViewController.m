@@ -19,29 +19,16 @@
 @end
 
 @implementation DogParkViewController
-@property CLLocationManager *locationManager;
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+//@property CLLocationManager *locationManager;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.
+//    self.
     
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    }
 
 
 @end

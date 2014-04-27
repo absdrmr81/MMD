@@ -7,12 +7,12 @@
 //
 
 #import "BreedViewController.h"
-#import "MoodViewController.h"
 #import <Parse/Parse.h>
 
 @interface BreedViewController ()
 {
     PFUser *user;
+    NSArray *array;
 }
 
 @end
@@ -30,8 +30,12 @@
     self.dogNameLabel.text = self.dogNameString;
     user = [PFUser currentUser];
 
-    self.breeds = @[@"Beagle", @"Boxer", @"Bulldog", @"Dachshund", @"German Shepherd", @"Golden Retriever", @"Labrador Retriever", @"Poodle", @"Rottweiler", @"Yorkshire Terrier"];
+    NSArray *breeds = @[@"Beagle", @"Boxer", @"Bulldog", @"Dachshund", @"German Shepherd", @"Golden Retriever", @"Labrador Retriever", @"Poodle", @"Rottweiler", @"Yorkshire Terrier"];
+    array = breeds;
+    
 }
+
+#pragma mark Picker Data Source Methods
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
@@ -40,18 +44,25 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return self.breeds.count;
+    return array.count;
 }
+
+#pragma mark Picker Delegate Method
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return self.breeds[row];
+    return [array objectAtIndex:row];
 }
 
 - (IBAction)saveBreed:(id)sender
 {
+    NSString *breedString = [array objectAtIndex:[self.breedPicker selectedRowInComponent:0]];
+    NSString *title = [[NSString alloc]initWithFormat:@"You have selected %@!", breedString];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title message:@"Yay!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    
+    [alert show];
     PFObject *currentUser = [PFUser currentUser];
-    currentUser[@"dogBreed"] = self.breeds;
+    currentUser[@"dogBreed"] = [NSString stringWithFormat:@"%@", breedString];
     
     [currentUser saveInBackground];
 }

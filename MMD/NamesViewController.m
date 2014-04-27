@@ -25,23 +25,20 @@
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:132/255.0f green:128/255.0f blue:98/255.0f alpha:1.0f];
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:255/255.0f green:252/255.0f blue:222/255.0f alpha:1.0f];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:255/255.0f green:252/255.0f blue:222/255.0f alpha:1.0f]}];
-    
     user = [PFUser currentUser];
 }
 
 - (IBAction)saveNames:(id)sender
 {
     NSString *dogName = [self.dogNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    
     PFObject *currentUser = [PFUser currentUser];
-
     currentUser[@"dogName"] = self.dogNameField.text;
     
     [currentUser saveInBackground];
     
     if ([dogName length] == 0)
     {
-        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Oops!" message:@"Make sure you enter your first name, last initial and of course your dog's name." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Oops!" message:@"Make sure you enter dog's name!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         
         [alertView show];
     }
