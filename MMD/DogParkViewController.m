@@ -21,9 +21,7 @@
 @end
 
 @implementation DogParkViewController
-<<<<<<< HEAD
-//@property CLLocationManager *locationManager;
-=======
+
 
 - (void)viewDidLoad
 {
@@ -95,20 +93,18 @@
 {
     return foundDogParks.count;
 }
->>>>>>> 92fcafab27b0d739b7166446047c8a3e8705d02f
+
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myProtoCell"];
     
-<<<<<<< HEAD
-//    self.
-=======
+
     MKMapItem *parkLocations = foundDogParks[indexPath.row];
     cell.textLabel.text = parkLocations.name;
     cell.detailTextLabel.text = parkLocations.phoneNumber;
     cell.detailTextLabel.text = parkLocations.description;
->>>>>>> 92fcafab27b0d739b7166446047c8a3e8705d02f
+
     
     return cell;
 }
