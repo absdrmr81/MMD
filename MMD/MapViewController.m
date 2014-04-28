@@ -38,12 +38,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    //Add UIBarButton button to Navigation bar programatically
+    UIBarButtonItem *flipButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu_icon.png"] style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
+    //Setting it to left-side of Navi bar
+    self.navigationItem.leftBarButtonItem = flipButton;
+    
+    
 
     //Setting Side bar button to allow sidebar to show
     _sideBarButton.target = self.revealViewController;
     _sideBarButton.action = @selector(revealToggle:);
     
     
+    
+    NSLog(@"navcontroller = %@", self.navigationController);
     //Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
@@ -110,13 +120,11 @@
     
     
     MKMapView * map = [[MKMapView alloc] initWithFrame:self.view.bounds];
-//    map.delegate = self;
-    
-//    [self.view addSubview:map];
     
     //Call this method
     [self CurrentLocationIdentifier];
 }
+
 
 //Current Location Address
 - (void) CurrentLocationIdentifier
@@ -172,11 +180,6 @@
           ------*/
      }];
 }
-//- (IBAction)backButtonPressed:(id)sender
-//{
-//    _sidebarButton.ta
-//
-//}
 
 
 - (void)viewWillAppear:(BOOL)animated
