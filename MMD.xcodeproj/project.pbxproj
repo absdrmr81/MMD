@@ -24,7 +24,7 @@
 		26223BD5190B49B90005BD26 /* vet.png in Resources */ = {isa = PBXBuildFile; fileRef = 26223BD4190B49B90005BD26 /* vet.png */; };
 		26223BD7190B49FB0005BD26 /* park1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 26223BD6190B49FB0005BD26 /* park1.jpeg */; };
 		26223BDA190C69760005BD26 /* VetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26223BD9190C69760005BD26 /* VetViewController.m */; };
-		26223BDC190E0A700005BD26 /* menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 26223BDB190E0A700005BD26 /* menu_icon.png */; };
+		26223BDE190EAA6A0005BD26 /* menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 26223BDD190EAA6A0005BD26 /* menu_icon.png */; };
 		9318672A1900663700C9C48A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 931867291900663700C9C48A /* MapKit.framework */; };
 		9346806D18FECC1600B351AD /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9346806C18FECC1600B351AD /* SignUpViewController.m */; };
 		9346807018FECC6100B351AD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9346806F18FECC6100B351AD /* LoginViewController.m */; };
@@ -89,7 +89,7 @@
 		26223BD6190B49FB0005BD26 /* park1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = park1.jpeg; path = ../../../Desktop/park1.jpeg; sourceTree = "<group>"; };
 		26223BD8190C69760005BD26 /* VetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VetViewController.h; sourceTree = "<group>"; };
 		26223BD9190C69760005BD26 /* VetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VetViewController.m; sourceTree = "<group>"; };
-		26223BDB190E0A700005BD26 /* menu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_icon.png; path = ../../../Desktop/menu_icon.png; sourceTree = "<group>"; };
+		26223BDD190EAA6A0005BD26 /* menu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_icon.png; path = ../menu_icon.png; sourceTree = "<group>"; };
 		931867291900663700C9C48A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9346806B18FECC1600B351AD /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		9346806C18FECC1600B351AD /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
@@ -234,7 +234,7 @@
 				93EB069218FF5AE500562371 /* SignUp/LogIn */,
 				9346806A18FE19BD00B351AD /* Registration */,
 				26182F7118FC865E00D5DB61 /* Images.xcassets */,
-				26223BDB190E0A700005BD26 /* menu_icon.png */,
+				26223BDD190EAA6A0005BD26 /* menu_icon.png */,
 				26223BD6190B49FB0005BD26 /* park1.jpeg */,
 				26223BD4190B49B90005BD26 /* vet.png */,
 				9357779F19082307004D8AAC /* google-maps-icon.jpg */,
@@ -384,7 +384,7 @@
 				9357779A190822C7004D8AAC /* doghouse.jpg in Resources */,
 				935777A019082307004D8AAC /* google-maps-icon.jpg in Resources */,
 				26182F6418FC865E00D5DB61 /* InfoPlist.strings in Resources */,
-				26223BDC190E0A700005BD26 /* menu_icon.png in Resources */,
+				26223BDE190EAA6A0005BD26 /* menu_icon.png in Resources */,
 				9357779C190822ED004D8AAC /* DogBio.jpg in Resources */,
 				9357779E190822FA004D8AAC /* Dogstudio.jpg in Resources */,
 				26182F6D18FC865E00D5DB61 /* Main.storyboard in Resources */,
