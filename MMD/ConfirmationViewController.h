@@ -12,7 +12,5 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *dogNameLabel;
 @property (strong, nonatomic) NSString *dogNameString;
-@property (strong, nonatomic) NSString *exString;
-@property (strong, nonatomic) NSString *combinedString;
 
 @end

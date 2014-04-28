@@ -8,6 +8,8 @@
 
 #import "ProfileViewController.h"
 #import "SWRevealViewController.h"
+#import "NamesViewController.h"
+#import "CalculateAgeViewController.h"
 #import "BreedViewController.h"
 #import <Parse/Parse.h>
 
@@ -35,7 +37,6 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     PFUser *currentUser = [PFUser currentUser];    
-//    currentUser[@"dogName"] = self.dogNameLabel.text;
 
     if (currentUser)
     {
@@ -65,6 +66,10 @@
 {
     BreedViewController *source;
     source = [sender sourceViewController];
+//    BreedViewController *bvc = [sender sourceViewController];
+//    CalculateAgeViewController *cvc = (CalculateAgeViewController *)segue.destinationViewController;
+    source.dogNameString = self.dogNameLabel.text;
+    //    BreedViewController.source.dogNameString =  self.dogNameLabel.text;
 }
 
 @end
