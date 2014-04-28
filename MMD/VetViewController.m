@@ -28,6 +28,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //Add UIBarButton button to Navigation bar programatically
+    UIBarButtonItem *flipButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu_icon.png"] style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
+    //Setting it to left-side of Navi bar
+    self.navigationItem.leftBarButtonItem = flipButton;
+
     
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     

@@ -705,7 +705,7 @@ Tell us a little about your dog.</string>
             </objects>
             <point key="canvasLocation" x="299" y="-76"/>
         </scene>
-        <!--Map View Controller - Title-->
+        <!--Map View Controller - Titletest-->
         <scene sceneID="EZX-XF-LfF">
             <objects>
                 <viewController id="PXk-Wa-wpW" customClass="MapViewController" sceneMemberID="viewController">
@@ -725,17 +725,10 @@ Tell us a little about your dog.</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="Dih-DM-1PU">
-                        <barButtonItem key="rightBarButtonItem" image="menu_icon.png" id="5Yy-12-aJ1">
-                            <connections>
-                                <action selector="backButtonPressed:" destination="PXk-Wa-wpW" id="b2G-xn-pdw"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Titletest" id="Dih-DM-1PU"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="tM2-Vz-b54" id="gRJ-SB-MKN"/>
-                        <outlet property="sideBarButton" destination="5Yy-12-aJ1" id="iZs-Hu-XSe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S9B-rM-NPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -931,7 +924,6 @@ Tell us a little about your dog.</string>
         <image name="appIcon" width="2048" height="1536"/>
         <image name="doghouse.jpg" width="321" height="374"/>
         <image name="google-maps-icon.jpg" width="450" height="311"/>
-        <image name="menu_icon.png" width="34" height="21"/>
         <image name="park1.jpeg" width="282" height="179"/>
         <image name="pup" width="1024" height="768"/>
         <image name="vet.png" width="283" height="222"/>
