@@ -118,6 +118,11 @@
     
     return cell;
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+}
 - (IBAction)startFindingVetButton:(id)sender
 {
     [self.locationManager startUpdatingLocation];
