@@ -70,6 +70,8 @@
     CLGeocoder *geocoder = [CLGeocoder new];
     [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
         [self foundDogParks:placemarks.firstObject];
+        
+        NSLog(@"%@", placemarks);
     }];
 }
 
