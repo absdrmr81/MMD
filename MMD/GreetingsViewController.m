@@ -24,9 +24,9 @@
 
 
 
-    self.startButtonPressed.layer.borderColor = [UIColor redColor].CGColor;
+    self.startButtonPressed.layer.borderColor = [UIColor colorWithRed:124/255.0f green:140/255.0f blue:48/255.0f alpha:1.0f].CGColor;
     self.startButtonPressed.layer.borderWidth = 1;
-    self.startButtonPressed.layer.cornerRadius = .25;
+    self.startButtonPressed.layer.cornerRadius = 5;
 }
 
 @end

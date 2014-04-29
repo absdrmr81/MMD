@@ -14,6 +14,7 @@
 {
     PFUser *user;
 }
+@property (strong, nonatomic) IBOutlet UIButton *enterButtonPressed;
 @end
 
 @implementation NamesViewController
@@ -23,9 +24,12 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithRed:255/255.0f green:252/255.0f blue:230/255.0f alpha:1.0f];
     self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:76/255.0f green:76/255.0f blue:66/255.0f alpha:1.0f];
-//    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:255/255.0f green:252/255.0f blue:222/255.0f alpha:1.0f];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:255/255.0f green:252/255.0f blue:222/255.0f alpha:1.0f]}];
     user = [PFUser currentUser];
+    
+    self.enterButtonPressed.layer.borderColor = [UIColor colorWithRed:124/255.0f green:140/255.0f blue:48/255.0f alpha:1.0f].CGColor;
+    self.enterButtonPressed.layer.borderWidth = 1;
+    self.enterButtonPressed.layer.cornerRadius = 5;
 }
 
 - (IBAction)saveNames:(id)sender
