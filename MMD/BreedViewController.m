@@ -32,6 +32,7 @@
 
     NSArray *breeds = @[@"Beagle", @"Boxer", @"Bulldog", @"Dachshund", @"German Shepherd", @"Golden Retriever", @"Labrador Retriever", @"Poodle", @"Rottweiler", @"Yorkshire Terrier"];
     array = breeds;
+    self.breedPicker.delegate = self;
     
 }
 
@@ -49,6 +50,11 @@
 
 #pragma mark Picker Delegate Method
 
+//-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+//{
+//    self.breedLabel.text = [array objectAtIndex:row];
+//}
+
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     return [array objectAtIndex:row];
@@ -57,14 +63,22 @@
 - (IBAction)saveBreed:(id)sender
 {
     NSString *breedString = [array objectAtIndex:[self.breedPicker selectedRowInComponent:0]];
-    NSString *title = [[NSString alloc]initWithFormat:@"You have selected %@!", breedString];
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title message:@"Yay!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+//    NSString *title = [[NSString alloc]initWithFormat:@"You have selected %@!", breedString];
     
-    [alert show];
     PFObject *currentUser = [PFUser currentUser];
+
     currentUser[@"dogBreed"] = [NSString stringWithFormat:@"%@", breedString];
-    
     [currentUser saveInBackground];
+//    [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//        if (succeeded) {
+//            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title message:@"Yay!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+//            
+//            [alert show];
+//        }
+//        else{
+//            NSLog(@"error = %@", error);
+//        }
+//    }];
 }
 
 @end

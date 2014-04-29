@@ -51,15 +51,15 @@
 - (IBAction)saveAge:(id)sender
 {
     NSString *age = [self.dogAgeField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    
-    
     NSString *retrievedCalculatedAgeField = self.calculatedAgeField.text;
+    
     int convertAgeToInt = [retrievedCalculatedAgeField intValue];
     self.calculatedAgeField.text = [NSString stringWithFormat:@"%d", convertAgeToInt];
-   
-    PFObject *currentUser = [PFUser currentUser];
-    currentUser[@"dogAge"] = self.calculatedAgeField.text;
     
+    NSNumber *number = [NSNumber numberWithInt:convertAgeToInt];
+    PFObject *currentUser = [PFUser currentUser];
+    
+    currentUser[@"dogAge"] = number;
     [currentUser saveInBackground];
 
     if ([age length] == 0)
