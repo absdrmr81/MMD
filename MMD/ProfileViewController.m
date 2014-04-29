@@ -16,6 +16,8 @@
 
 @interface ProfileViewController ()
 
+@property (strong, nonatomic) PFUser *currentUser;
+
 @end
 
 @implementation ProfileViewController
@@ -25,7 +27,7 @@
     [super viewDidLoad];
     
     //Add UIBarButton button to Navigation bar programatically
-    UIBarButtonItem *flipButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu_icon.png"] style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
+    UIBarButtonItem *flipButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_nav_std"] style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
     //Setting it to left-side of Navi bar
     self.navigationItem.leftBarButtonItem = flipButton;
 
@@ -35,9 +37,6 @@
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:255/255.0f green:252/255.0f blue:222/255.0f alpha:1.0f];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:255/255.0f green:252/255.0f blue:222/255.0f alpha:1.0f]}];
     
-    self.dogNameLabel.text = self.dogNameString;
-    
-    //This is a comment 
     self.title = @"Profile";
     
     //Set the gesture
@@ -53,6 +52,14 @@
     {
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.currentUser = [PFUser currentUser];
+    self.dogNameLabel.text = self.currentUser[@"dogName"];
+    self.dogBreedLabel.text = self.currentUser[@"dogBreed"];
+    self.dogAgeLabel.text = [self.currentUser[@"dogAge"] description];
 }
 
 - (IBAction)logOut:(id)sender
@@ -71,12 +78,7 @@
 
 - (IBAction)unwindToMapViewController:(UIStoryboardSegue *)sender
 {
-    BreedViewController *source;
-    source = [sender sourceViewController];
-//    BreedViewController *bvc = [sender sourceViewController];
-//    CalculateAgeViewController *cvc = (CalculateAgeViewController *)segue.destinationViewController;
-    source.dogNameString = self.dogNameLabel.text;
-    //    BreedViewController.source.dogNameString =  self.dogNameLabel.text;
+
 }
 
 @end

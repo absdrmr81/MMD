@@ -464,45 +464,52 @@ Tell us a little about your dog.</string>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfj-h6-KD5">
-                                <rect key="frame" x="114" y="244" width="92" height="21"/>
+                                <rect key="frame" x="20" y="200" width="280" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.91345712379999999" green="1" blue="0.9665387876" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.48627450979999998" green="0.54901960780000003" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQm-Bq-6VF">
-                                <rect key="frame" x="114" y="273" width="92" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQm-Bq-6VF">
+                                <rect key="frame" x="98" y="285" width="40" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.91345712379999999" green="1" blue="0.9665387876" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFq-b3-Pq0">
-                                <rect key="frame" x="114" y="302" width="92" height="21"/>
+                                <rect key="frame" x="20" y="346" width="280" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.91345712379999999" green="1" blue="0.9665387876" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0o-QL-MFj">
-                                <rect key="frame" x="39" y="244" width="51" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDE-Sk-IGQ">
+                                <rect key="frame" x="143" y="256" width="35" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.2274509804" green="0.70980392160000005" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Age:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDE-Sk-IGQ">
-                                <rect key="frame" x="55" y="273" width="35" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Breed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pK-6l-t6m">
+                                <rect key="frame" x="135" y="322" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.2274509804" green="0.70980392160000005" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Breed:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pK-6l-t6m">
-                                <rect key="frame" x="39" y="302" width="51" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="dog years" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mmq-Io-fzS">
+                                <rect key="frame" x="135" y="285" width="88" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.48627450979999998" green="0.54901960780000003" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="_____________________" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dbs-RS-PWq">
+                                <rect key="frame" x="70" y="223" width="180" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.48627450979999998" green="0.54901960780000003" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -517,6 +524,7 @@ Tell us a little about your dog.</string>
                     </navigationItem>
                     <connections>
                         <outlet property="dogAgeLabel" destination="EQm-Bq-6VF" id="4VQ-pv-Mph"/>
+                        <outlet property="dogBreedLabel" destination="NFq-b3-Pq0" id="G9L-ow-8HU"/>
                         <outlet property="dogNameLabel" destination="mfj-h6-KD5" id="L2p-G8-6kB"/>
                         <segue destination="cZf-5t-LIG" kind="push" identifier="showLogin" id="0r6-bO-dgU"/>
                     </connections>
@@ -552,10 +560,12 @@ Tell us a little about your dog.</string>
         <scene sceneID="mbj-af-emj">
             <objects>
                 <tableViewController id="U5l-sX-Zmr" customClass="SidebarViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="UG0-Ps-O6S">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="UG0-Ps-O6S">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.48627450979999998" green="0.54901960780000003" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Title" id="Smo-no-h8K" userLabel="Table View Cell - Title">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
@@ -568,11 +578,12 @@ Tell us a little about your dog.</string>
                                             <rect key="frame" x="20" y="11" width="216" height="28"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="25"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" red="1" green="0.96078431369999995" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Home" id="gQc-Zv-hYu" userLabel="Table View Cell - Home">
                                 <rect key="frame" x="0.0" y="66" width="320" height="44"/>
@@ -585,15 +596,16 @@ Tell us a little about your dog.</string>
                                             <rect key="frame" x="82" y="11" width="88" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="19"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" red="1" green="0.96078431372549022" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="doghouse.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="pcH-Bn-nGH">
-                                            <rect key="frame" x="20" y="6" width="56" height="32"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_profile_std" translatesAutoresizingMaskIntoConstraints="NO" id="pcH-Bn-nGH">
+                                            <rect key="frame" x="20" y="4" width="56" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="RgK-nJ-bPb" kind="custom" customClass="SWRevealViewControllerSegue" id="nsn-KV-yPL"/>
                                 </connections>
@@ -609,15 +621,16 @@ Tell us a little about your dog.</string>
                                             <rect key="frame" x="83" y="11" width="69" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="19"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" red="1" green="0.96078431369999995" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="park1.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="mi8-GM-U66">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_parks_std" translatesAutoresizingMaskIntoConstraints="NO" id="mi8-GM-U66">
                                             <rect key="frame" x="20" y="6" width="56" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="v5B-Hj-Kxf" kind="custom" customClass="SWRevealViewControllerSegue" id="dac-wx-jUM"/>
                                 </connections>
@@ -629,19 +642,20 @@ Tell us a little about your dog.</string>
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gallery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETa-XS-aF5">
-                                            <rect key="frame" x="82" y="11" width="104" height="20"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Grooming" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETa-XS-aF5">
+                                            <rect key="frame" x="82" y="11" width="104" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="19"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" red="1" green="0.96078431369999995" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Dogstudio.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Dj0-s6-XzY">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_grooming_std" translatesAutoresizingMaskIntoConstraints="NO" id="Dj0-s6-XzY">
                                             <rect key="frame" x="20" y="6" width="56" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="cM3-XG-FPq" kind="custom" customClass="SWRevealViewControllerSegue" id="xhu-Qc-82o"/>
                                 </connections>
@@ -666,6 +680,7 @@ Tell us a little about your dog.</string>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="PXk-Wa-wpW" kind="custom" customClass="SWRevealViewControllerSegue" id="c6K-yV-hyQ"/>
                                 </connections>
@@ -681,15 +696,16 @@ Tell us a little about your dog.</string>
                                             <rect key="frame" x="85" y="11" width="42" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="19"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" red="1" green="0.96078431369999995" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vet.png" translatesAutoresizingMaskIntoConstraints="NO" id="40E-35-vvr">
-                                            <rect key="frame" x="17" y="6" width="60" height="32"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_vet_std" translatesAutoresizingMaskIntoConstraints="NO" id="40E-35-vvr">
+                                            <rect key="frame" x="17" y="6" width="56" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="0sE-W6-99h" kind="custom" customClass="SWRevealViewControllerSegue" id="9Ag-90-HJV"/>
                                 </connections>
@@ -931,13 +947,13 @@ Tell us a little about your dog.</string>
         <image name="2pup" width="662" height="769"/>
         <image name="3pup" width="1054" height="989"/>
         <image name="4pup" width="1333" height="1295"/>
-        <image name="Dogstudio.jpg" width="512" height="512"/>
         <image name="appIcon" width="2048" height="1536"/>
-        <image name="doghouse.jpg" width="321" height="374"/>
         <image name="google-maps-icon.jpg" width="450" height="311"/>
-        <image name="park1.jpeg" width="282" height="179"/>
+        <image name="ic_grooming_std" width="44" height="44"/>
+        <image name="ic_parks_std" width="44" height="44"/>
+        <image name="ic_profile_std" width="44" height="44"/>
+        <image name="ic_vet_std" width="44" height="44"/>
         <image name="pup" width="1024" height="768"/>
-        <image name="vet.png" width="283" height="222"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -946,6 +962,6 @@ Tell us a little about your dog.</string>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="nsn-KV-yPL"/>
-        <segue reference="Osb-aK-t3M"/>
+        <segue reference="c6K-yV-hyQ"/>
     </inferredMetricsTieBreakers>
 </document>
