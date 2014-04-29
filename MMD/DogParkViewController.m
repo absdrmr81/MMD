@@ -111,7 +111,9 @@
     MKMapItem *parkLocations = foundDogParks[indexPath.row];
     cell.textLabel.text = parkLocations.name;
     cell.detailTextLabel.text = parkLocations.phoneNumber;
-    cell.detailTextLabel.text = parkLocations.description;
+    
+    
+//    cell.detailTextLabel.text = parkLocations.description;
 
     
     return cell;

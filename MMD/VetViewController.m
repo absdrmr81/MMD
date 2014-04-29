@@ -112,7 +112,7 @@
     cell.textLabel.text = vetLocations.name;
 //    cell.detailTextLabel.text = vetLocations.address;
     cell.detailTextLabel.text = vetLocations.name;//[@"formattedAddressLine"];
-    
+    //Showing Address in subtitle in TableView cell
     cell.detailTextLabel.text = [[vetLocations.placemark.addressDictionary objectForKey:@"FormattedAddressLines"] componentsJoinedByString:@"\n"];
     
     
