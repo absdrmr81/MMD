@@ -15,6 +15,7 @@
 @interface DogParkViewController () <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate>
 {
     NSArray *foundDogParks;
+    NSString *address;
 }
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property CLLocationManager *locationManager;
@@ -89,7 +90,7 @@
             [self.myTableView reloadData];
             
             NSLog(@"%@", mapitem);
-            
+            NSLog(@"%@", address);
         }];
         
     }
@@ -106,11 +107,14 @@
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myProtoCell"];
-    
-
     MKMapItem *parkLocations = foundDogParks[indexPath.row];
+    
+    
     cell.textLabel.text = parkLocations.name;
-    cell.detailTextLabel.text = parkLocations.phoneNumber;
+    cell.detailTextLabel.text = parkLocations.name;
+    
+    //Showing Address in subtitle in TableView cell
+    cell.detailTextLabel.text = [[parkLocations.placemark.addressDictionary objectForKey:@"FormattedAddressLines"] componentsJoinedByString:@"\n"];
     
     
 //    cell.detailTextLabel.text = parkLocations.description;
