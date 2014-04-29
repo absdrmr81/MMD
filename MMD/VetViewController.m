@@ -16,6 +16,8 @@
 @interface VetViewController () <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     NSArray *foundVetLocations;
+    NSString *address;
+    
 }
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property CLLocationManager *locationManager;
@@ -84,10 +86,12 @@
         NSArray   *mapitems = response.mapItems;
         MKMapItem *mapitem  = mapitems.firstObject;
         
+        
         foundVetLocations = mapitems;
         [self.myTableView reloadData];
         
         NSLog(@"%@", mapitem);
+        NSLog(@"%@", address);
         
     }];
     
@@ -104,9 +108,13 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCellID"];
     MKMapItem *vetLocations = foundVetLocations[indexPath.row];
+  
     cell.textLabel.text = vetLocations.name;
-    cell.detailTextLabel.text = vetLocations.phoneNumber;
-    cell.detailTextLabel.text = vetLocations.description;
+//    cell.detailTextLabel.text = vetLocations.address;
+    cell.detailTextLabel.text = vetLocations.name;//[@"formattedAddressLine"];
+    
+    cell.detailTextLabel.text = [[vetLocations.placemark.addressDictionary objectForKey:@"FormattedAddressLines"] componentsJoinedByString:@"\n"];
+    
     
     return cell;
 }
