@@ -16,6 +16,8 @@
 
 @interface ProfileViewController ()
 
+@property (strong, nonatomic) PFUser *currentUser;
+
 @end
 
 @implementation ProfileViewController
@@ -34,10 +36,7 @@
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:132/255.0f green:128/255.0f blue:98/255.0f alpha:1.0f];
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:255/255.0f green:252/255.0f blue:222/255.0f alpha:1.0f];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:255/255.0f green:252/255.0f blue:222/255.0f alpha:1.0f]}];
-    
-    self.dogNameLabel.text = self.dogNameString;
-    
-    //This is a comment 
+        
     self.title = @"Profile";
     
     //Set the gesture
@@ -53,6 +52,14 @@
     {
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.currentUser = [PFUser currentUser];
+    self.dogNameLabel.text = self.currentUser[@"dogName"];
+    self.dogBreedLabel.text = self.currentUser[@"dogBreed"];
+    self.dogAgeLabel.text = self.currentUser[@"dogAge"];
 }
 
 - (IBAction)logOut:(id)sender
@@ -71,12 +78,12 @@
 
 - (IBAction)unwindToMapViewController:(UIStoryboardSegue *)sender
 {
-    BreedViewController *source;
-    source = [sender sourceViewController];
-//    BreedViewController *bvc = [sender sourceViewController];
-//    CalculateAgeViewController *cvc = (CalculateAgeViewController *)segue.destinationViewController;
-    source.dogNameString = self.dogNameLabel.text;
-    //    BreedViewController.source.dogNameString =  self.dogNameLabel.text;
+//    BreedViewController *source;
+//    source = [sender sourceViewController];
+////    BreedViewController *bvc = [sender sourceViewController];
+////    CalculateAgeViewController *cvc = (CalculateAgeViewController *)segue.destinationViewController;
+//    source.dogNameString = self.dogNameLabel.text;
+//    //    BreedViewController.source.dogNameString =  self.dogNameLabel.text;
 }
 
 @end
