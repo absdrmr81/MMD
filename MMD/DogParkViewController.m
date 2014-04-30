@@ -120,10 +120,10 @@
                 MKPointAnnotation *pin = [MKPointAnnotation new];
                 pin.coordinate = item.placemark.location.coordinate;
                 [self.mapView addAnnotation:pin];
-<<<<<<< HEAD
+
                 
-=======
->>>>>>> 570ba73165b7f29939a28c1c2be3747377284913
+
+
                 //Setting a box perimeter for annotations
                 min.latitude = MIN(pin.coordinate.latitude, min.latitude);
                 max.latitude = MAX(pin.coordinate.latitude, min.latitude);
