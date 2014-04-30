@@ -14,6 +14,8 @@
 {
     PFUser *user;
 }
+@property (strong, nonatomic) IBOutlet UIButton *calculateButtonPressed;
+@property (strong, nonatomic) IBOutlet UIButton *nextButtonPressed;
 @end
 
 @implementation CalculateAgeViewController
@@ -27,6 +29,14 @@
     
     user = [PFUser currentUser];
     self.dogNameLabel.text = self.dogNameString;
+    
+    self.calculateButtonPressed.layer.borderColor = [UIColor colorWithRed:124/255.0f green:140/255.0f blue:48/255.0f alpha:1.0f].CGColor;
+    self.calculateButtonPressed.layer.borderWidth = 1;
+    self.calculateButtonPressed.layer.cornerRadius = 5;
+    
+    self.nextButtonPressed.layer.borderColor = [UIColor colorWithRed:124/255.0f green:140/255.0f blue:48/255.0f alpha:1.0f].CGColor;
+    self.nextButtonPressed.layer.borderWidth = 1;
+    self.nextButtonPressed.layer.cornerRadius = 5;
 }
     
 - (IBAction)calculateDogsAgeButtonPressed:(id)sender

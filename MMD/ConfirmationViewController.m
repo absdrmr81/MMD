@@ -14,6 +14,7 @@
     NSString *string1;
     NSString *fullString;
 }
+@property (strong, nonatomic) IBOutlet UIButton *okButtonPressed;
 @end
 
 @implementation ConfirmationViewController
@@ -28,6 +29,10 @@
     string1 = @"!";
     fullString = [self.dogNameString stringByAppendingString:string1];
     self.dogNameLabel.text = fullString;
+    
+    self.okButtonPressed.layer.borderColor = [UIColor colorWithRed:124/255.0f green:140/255.0f blue:48/255.0f alpha:1.0f].CGColor;
+    self.okButtonPressed.layer.borderWidth = 1;
+    self.okButtonPressed.layer.cornerRadius = 5;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
