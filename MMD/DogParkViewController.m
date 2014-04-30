@@ -9,11 +9,23 @@
 #import "DogParkViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+<<<<<<< HEAD
+#import "ParkDetailViewController.h"
+=======
 #import <Parse/Parse.h>
+>>>>>>> a410183517fe5af65898ec3eefcae5d57ba48ff6
 #import "MapAnnotation.h"
 #import "SWRevealViewController.h"
 
 
+<<<<<<< HEAD
+@interface DogParkViewController () <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate>
+{
+    NSArray *foundDogParks;
+    NSString *address;
+}
+@property (strong, nonatomic) IBOutlet MKMapView *parkMapView;
+=======
 @interface DogParkViewController () <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate>
 {
     NSArray *foundDogParks;
@@ -27,7 +39,9 @@
 @property (strong, nonatomic) NSString *address;
 
 
+>>>>>>> a410183517fe5af65898ec3eefcae5d57ba48ff6
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property CLLocationManager *locationManager;
 
 @end
@@ -68,23 +82,6 @@
     
     self.locationManager = [CLLocationManager new];
     self.locationManager.delegate = self;
-    
-//    self.foundDogParks = 
-//    NSArray *myTransitStops = myMapDictionary[@"row"];
-//
-//    for (NSDictionary *stop in myTransitStops)
-//    {
-//        double latitude = [stop[@"latitude"]doubleValue];
-//        double longitude = [stop[@"longitude"]doubleValue];
-//        
-//        CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(latitude, longitude);
-//        BusStopAnnotation *annotation = [BusStopAnnotation new];
-//        annotation.title = stop[@"cta_stop_name"];
-//        
-//        annotation.subtitle = [NSString stringWithFormat:@"Routes: %@",stop[@"routes"]];
-//        annotation.coordinate = centerCoordinate;
-//        annotation.busStopDictionary = stop;
-//        [self.mapView addAnnotation:annotation];
 }
 
 #pragma mark -- Location Logic
@@ -133,7 +130,7 @@
             NSArray   *mapitems = response.mapItems;
             MKMapItem *mapitem  = mapitems.firstObject;
             
-            self.foundDogParks = mapitems;
+            foundDogParks = mapitems;
             [self.myTableView reloadData];
             
             CLLocationCoordinate2D min, max;
@@ -160,7 +157,7 @@
             
             
             NSLog(@"%@", mapitem);
-            NSLog(@"%@", self.address);
+            NSLog(@"%@", address);
         }];
         
     }
@@ -191,14 +188,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.foundDogParks.count;
+    return foundDogParks.count;
 }
 
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myProtoCell"];
-    MKMapItem *parkLocations = self.foundDogParks[indexPath.row];
+    MKMapItem *parkLocations = foundDogParks[indexPath.row];
     
     
     cell.textLabel.text = parkLocations.name;

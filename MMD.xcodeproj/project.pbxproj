@@ -421,6 +421,7 @@
 				9346806D18FECC1600B351AD /* SignUpViewController.m in Sources */,
 				93EB068E18FEED6800562371 /* ConfirmationViewController.m in Sources */,
 				935777A6190828C0004D8AAC /* MapViewController.m in Sources */,
+				93D2331319117CF800E432D8 /* ParkDetailViewController.m in Sources */,
 				9357779519081FF9004D8AAC /* SWRevealViewController.m in Sources */,
 				26223BDA190C69760005BD26 /* VetViewController.m in Sources */,
 				935777A3190827AC004D8AAC /* PhotoViewController.m in Sources */,
