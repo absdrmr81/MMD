@@ -9,37 +9,17 @@
 #import "DogParkViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
-<<<<<<< HEAD
-#import "ParkDetailViewController.h"
-=======
 #import <Parse/Parse.h>
->>>>>>> a410183517fe5af65898ec3eefcae5d57ba48ff6
-#import "MapAnnotation.h"
 #import "SWRevealViewController.h"
 
-
-<<<<<<< HEAD
-@interface DogParkViewController () <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate>
-{
-    NSArray *foundDogParks;
-    NSString *address;
-}
-@property (strong, nonatomic) IBOutlet MKMapView *parkMapView;
-=======
 @interface DogParkViewController () <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate>
 {
     NSArray *foundDogParks;
     NSString *address;
-    MKMapView *mapView;
    
 }
 
 
-@property (strong, nonatomic) NSArray *foundDogParks;
-@property (strong, nonatomic) NSString *address;
-
-
->>>>>>> a410183517fe5af65898ec3eefcae5d57ba48ff6
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property CLLocationManager *locationManager;
@@ -139,7 +119,7 @@
             for (MKMapItem *item in mapitems) {
                 MKPointAnnotation *pin = [MKPointAnnotation new];
                 pin.coordinate = item.placemark.location.coordinate;
-                [self->mapView addAnnotation:pin];
+                [self.mapView addAnnotation:pin];
                 //Setting a box perimeter for annotations
                 min.latitude = MIN(pin.coordinate.latitude, min.latitude);
                 max.latitude = MAX(pin.coordinate.latitude, min.latitude);
@@ -150,7 +130,7 @@
             
             MKCoordinateSpan span = MKCoordinateSpanMake(max.latitude - min.latitude, max.longitude - min.longitude);
             MKCoordinateRegion region = MKCoordinateRegionMake(placemark.location.coordinate, span);
-            [self->mapView setRegion:region animated:YES];
+            [self.mapView setRegion:region animated:YES];
             
             
             
@@ -163,7 +143,7 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    if (annotation == mapView.userLocation)
+    if (annotation == self.mapView.userLocation)
     {
         return nil;
     }
