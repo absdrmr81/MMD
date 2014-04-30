@@ -13,6 +13,7 @@
 @interface SignUpViewController ()
 
 @property (nonatomic, strong) PFUser *user;
+@property (strong, nonatomic) IBOutlet UIButton *enterButtonPressed;
 
 @end
 
@@ -27,6 +28,9 @@
     
     self.title = @"Sign Up";
 
+    self.enterButtonPressed.layer.borderColor = [UIColor colorWithRed:124/255.0f green:140/255.0f blue:48/255.0f alpha:1.0f].CGColor;
+    self.enterButtonPressed.layer.borderWidth = 1;
+    self.enterButtonPressed.layer.cornerRadius = 5;
 }
 
 - (IBAction)signUp:(id)sender
