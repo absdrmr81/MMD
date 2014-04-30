@@ -13,7 +13,9 @@
 
 
 
-@interface VetViewController () <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource>
+
+
+@interface VetViewController () <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, MKAnnotation>
 {
     NSArray *foundVetLocations;
     NSString *address;
@@ -29,7 +31,13 @@
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
+    
+    
+    
+    
+    
     //Add UIBarButton button to Navigation bar programatically
     UIBarButtonItem *flipButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_nav_std"] style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
     //Setting it to left-side of Navi bar
@@ -40,6 +48,7 @@
     
     self.locationManager = [CLLocationManager new];
     self.locationManager.delegate =self;
+    
    
 }
 
@@ -59,6 +68,19 @@
             [self startReverseGeocode:location];
             [self.locationManager stopUpdatingLocation];
             break;
+            
+//            
+//            MKCoordinateRegion region;
+//            region.center = location;
+//            
+//            //Set Zoom level using Span
+//            MKCoordinateSpan span;
+//            span.latitudeDelta = 0.015;
+//            span.longitudeDelta = 0.015;
+//            region.span = span;
+//            // Set the region here... but I want this to be a dynamic size
+//            // Obviously this should be set after I've added my annotations
+//            [mapView setRegion:region animated:YES];
         }
     }
 }
@@ -90,6 +112,9 @@
         foundVetLocations = mapitems;
         [self.myTableView reloadData];
         
+        
+        
+        
         NSLog(@"%@", mapitem);
         NSLog(@"%@", address);
         
@@ -116,13 +141,23 @@
     cell.detailTextLabel.text = [[vetLocations.placemark.addressDictionary objectForKey:@"FormattedAddressLines"] componentsJoinedByString:@"\n"];
     
     
+    
     return cell;
 }
 
+
+//Segued into detailview once selected
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
+//Button search for Vets in current location
 - (IBAction)startFindingVetButton:(id)sender
 {
     [self.locationManager startUpdatingLocation];
@@ -134,6 +169,30 @@
     
 }
 
+-(MKAnnotationView *) mapView:(MKMapView *)mapMKMapView viewForAnnotation:       (id<MKAnnotation>)annotation
+{
+    MKPinAnnotationView *MyPin=[[MKPinAnnotationView alloc] initWithAnnotation:annotation       reuseIdentifier:@"myCellID"];
+    MyPin.pinColor = MKPinAnnotationColorPurple; // <--for coloring purpose
+    
+    UIButton *adverButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    
+    [adverButton addTarget:self action:@selector(button:)forControlEvents:UIControlEventTouchUpInside];
+    
+    MyPin.rightCalloutAccessoryView = adverButton;
+    MyPin.draggable = YES;
+    MyPin.highlighted = YES;
+    MyPin.animatesDrop  = TRUE;
+    MyPin.canShowCallout  = YES;
+    
+    return MyPin;
+}
+
+
+
+-(void)button:(id)sender
+{
+    //add your nextView you want to open here
+}
 
 
 @end

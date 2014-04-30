@@ -9,16 +9,20 @@
 #import "DogParkViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+#import <Parse/Parse.h>
 #import "SWRevealViewController.h"
+
 
 
 @interface DogParkViewController () <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate>
 {
     NSArray *foundDogParks;
     NSString *address;
+   
 }
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property CLLocationManager *locationManager;
+
 @end
 
 @implementation DogParkViewController
@@ -117,13 +121,30 @@
     
     //Showing Address in subtitle in TableView cell
     cell.detailTextLabel.text = [[parkLocations.placemark.addressDictionary objectForKey:@"FormattedAddressLines"] componentsJoinedByString:@"\n"];
-    
-    
-//    cell.detailTextLabel.text = parkLocations.description;
-
-    
     return cell;
 }
+
+
+
+//- (PFQuery *)queryForTable
+//{
+//    if (!self.userLocation) {
+//        return nil;
+//    }
+//
+//    PFGeoPoint *userGeoPoint = self.userLocation;
+//
+//    PFQuery *query = [PFQuery queryWithClassName:@"MainInfo"];
+//
+//    [query whereKey:@"geoPoint" nearGeoPoint:userGeoPoint];
+//
+//    query.limit = 10;
+//
+////    _placesObjects = [query findObjects];
+//
+//    return query;
+//}
+
 - (IBAction)startFindingDogParksButton:(id)sender
 {
     [self.locationManager startUpdatingLocation];
