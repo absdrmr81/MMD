@@ -21,6 +21,7 @@
 }
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property CLLocationManager *locationManager;
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
 
 @end
 
@@ -123,7 +124,9 @@
 {
     
 }
-- (IBAction)startFindingVetButton:(id)sender
+
+
+- (IBAction)searchVets:(id)sender
 {
     [self.locationManager startUpdatingLocation];
 }
