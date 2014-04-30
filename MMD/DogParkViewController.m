@@ -9,37 +9,17 @@
 #import "DogParkViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
-<<<<<<< HEAD
-#import "ParkDetailViewController.h"
-=======
 #import <Parse/Parse.h>
->>>>>>> a410183517fe5af65898ec3eefcae5d57ba48ff6
-#import "MapAnnotation.h"
 #import "SWRevealViewController.h"
 
-
-<<<<<<< HEAD
-@interface DogParkViewController () <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate>
-{
-    NSArray *foundDogParks;
-    NSString *address;
-}
-@property (strong, nonatomic) IBOutlet MKMapView *parkMapView;
-=======
 @interface DogParkViewController () <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate>
 {
     NSArray *foundDogParks;
     NSString *address;
-    MKMapView *mapView;
    
 }
 
 
-@property (strong, nonatomic) NSArray *foundDogParks;
-@property (strong, nonatomic) NSString *address;
-
-
->>>>>>> a410183517fe5af65898ec3eefcae5d57ba48ff6
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property CLLocationManager *locationManager;
@@ -140,7 +120,10 @@
                 MKPointAnnotation *pin = [MKPointAnnotation new];
                 pin.coordinate = item.placemark.location.coordinate;
                 [self.mapView addAnnotation:pin];
+<<<<<<< HEAD
                 
+=======
+>>>>>>> 570ba73165b7f29939a28c1c2be3747377284913
                 //Setting a box perimeter for annotations
                 min.latitude = MIN(pin.coordinate.latitude, min.latitude);
                 max.latitude = MAX(pin.coordinate.latitude, min.latitude);
@@ -164,7 +147,7 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    if (annotation == mapView.userLocation)
+    if (annotation == self.mapView.userLocation)
     {
         return nil;
     }
