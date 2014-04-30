@@ -15,15 +15,18 @@
 
 
 
-@interface VetViewController () <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, MKAnnotation>
+@interface VetViewController () <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, MKAnnotation, MKMapViewDelegate>
 {
     NSArray *foundVetLocations;
     NSString *address;
+    CLLocation *locationManager;
+    CLLocationCoordinate2D coordinate;
     
 }
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property CLLocationManager *locationManager;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
+
 
 @end
 
@@ -34,6 +37,7 @@
 {
     
     [super viewDidLoad];
+    
     
     
     
@@ -70,18 +74,7 @@
             [self.locationManager stopUpdatingLocation];
             break;
             
-//            
-//            MKCoordinateRegion region;
-//            region.center = location;
-//            
-//            //Set Zoom level using Span
-//            MKCoordinateSpan span;
-//            span.latitudeDelta = 0.015;
-//            span.longitudeDelta = 0.015;
-//            region.span = span;
-//            // Set the region here... but I want this to be a dynamic size
-//            // Obviously this should be set after I've added my annotations
-//            [mapView setRegion:region animated:YES];
+           
         }
     }
 }
@@ -112,12 +105,28 @@
         
         foundVetLocations = mapitems;
         [self.myTableView reloadData];
-        
-        
-        
-        
+
         NSLog(@"%@", mapitem);
         NSLog(@"%@", address);
+        
+        NSString *location = @"FormattedAddressLines";
+        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+        [geocoder geocodeAddressString:location
+                     completionHandler:^(NSArray* placemarks, NSError* error){
+                         if (placemarks && placemarks.count > 0) {
+                             CLPlacemark *topResult = [placemarks objectAtIndex:0];
+                             MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:topResult];
+                             
+                             MKCoordinateRegion region = self.mapView.region;
+                             region.center = [(CLCircularRegion *)placemark.region center];
+                             region.span.longitudeDelta /= 8.0;
+                             region.span.latitudeDelta /= 8.0;
+                             
+                             [self.mapView setRegion:region animated:YES];
+                             [self.mapView addAnnotation:placemark];
+                         }
+                     }
+         ];
         
     }];
     
@@ -147,24 +156,22 @@
 }
 
 
+
+
 //Segued into detailview once selected
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
 }
 
-<<<<<<< HEAD
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
 }
 
-//Button search for Vets in current location
-- (IBAction)startFindingVetButton:(id)sender
-=======
 
 - (IBAction)searchVets:(id)sender
->>>>>>> e2247e874164aa72e0a26385d440a2839c0b9c1e
 {
     [self.locationManager startUpdatingLocation];
 }
@@ -175,7 +182,7 @@
     
 }
 
--(MKAnnotationView *) mapView:(MKMapView *)mapMKMapView viewForAnnotation:       (id<MKAnnotation>)annotation
+-(MKAnnotationView *) mapView:(MKMapView *)mapMKMapView viewForAnnotation: (id<MKAnnotation>)annotation
 {
     MKPinAnnotationView *MyPin=[[MKPinAnnotationView alloc] initWithAnnotation:annotation       reuseIdentifier:@"myCellID"];
     MyPin.pinColor = MKPinAnnotationColorPurple; // <--for coloring purpose

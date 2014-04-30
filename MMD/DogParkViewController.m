@@ -165,8 +165,7 @@
 //
 //    return query;
 //}
-
-- (IBAction)startFindingDogParksButton:(id)sender
+- (IBAction)searchParks:(id)sender
 {
     [self.locationManager startUpdatingLocation];
 }
