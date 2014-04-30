@@ -18,6 +18,7 @@
 {
     NSArray *foundDogParks;
     NSString *address;
+    MKMapView *mapView;
    
 }
 
@@ -37,6 +38,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    MKCoordinateSpan span;
+    CLLocationCoordinate2D start;
+    
+    //create region
+    MKCoordinateRegion region;
+    region.span = span;
+    region.center = start;
+//    
+//    [self.mapView setRegion:region animated:YES];
+//    self.mapView.showsUserLocation = YES;
+//    
+//    [self.mapView setUserInteractionEnabled:YES];
+//    [self.mapView setUserTrackingMode:MKUserTrackingModeFollow];
+    
+    
     
     [CLLocationManager locationServicesEnabled];
 
@@ -103,11 +121,11 @@
 }
 
 
-- (void)foundDogParks: (CLPlacemark *)placemarks
+- (void)foundDogParks: (CLPlacemark *)placemark
     {
         MKLocalSearchRequest *request = [MKLocalSearchRequest new];
         request.naturalLanguageQuery = @"Dog parks";
-        request.region = MKCoordinateRegionMake(placemarks.location.coordinate, MKCoordinateSpanMake(1, 1));
+        request.region = MKCoordinateRegionMake(placemark.location.coordinate, MKCoordinateSpanMake(1, 1));
         
         MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
         [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
@@ -117,6 +135,28 @@
             
             self.foundDogParks = mapitems;
             [self.myTableView reloadData];
+            
+            CLLocationCoordinate2D min, max;
+            min = max = placemark.location.coordinate;
+            //Setting annotations
+            for (MKMapItem *item in mapitems) {
+                MKPointAnnotation *pin = [MKPointAnnotation new];
+                pin.coordinate = item.placemark.location.coordinate;
+                [self->mapView addAnnotation:pin];
+                //Setting a box perimeter for annotations
+                min.latitude = MIN(pin.coordinate.latitude, min.latitude);
+                max.latitude = MAX(pin.coordinate.latitude, min.latitude);
+                min.longitude = MIN(pin.coordinate.longitude, min.longitude);
+                max.longitude = MAX(pin.coordinate.longitude, min.longitude);
+                
+            }
+            
+            MKCoordinateSpan span = MKCoordinateSpanMake(max.latitude - min.latitude, max.longitude - min.longitude);
+            MKCoordinateRegion region = MKCoordinateRegionMake(placemark.location.coordinate, span);
+            [self->mapView setRegion:region animated:YES];
+            
+            
+            
             
             NSLog(@"%@", mapitem);
             NSLog(@"%@", self.address);

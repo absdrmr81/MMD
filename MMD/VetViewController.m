@@ -15,12 +15,14 @@
 
 
 
+
 @interface VetViewController () <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, MKAnnotation, MKMapViewDelegate>
 {
     NSArray *foundVetLocations;
     NSString *address;
     CLLocation *locationManager;
     CLLocationCoordinate2D coordinate;
+    MKMapView *mapView;
     
 }
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
@@ -36,7 +38,21 @@
 - (void)viewDidLoad
 {
     
-    [super viewDidLoad];
+    [super viewDidLoad];//move the map to our location
+    
+    MKCoordinateSpan span;
+    CLLocationCoordinate2D start;
+    
+    //create region
+    MKCoordinateRegion region;
+    region.span = span;
+    region.center = start;
+    
+    [self.mapView setRegion:region animated:YES];
+    self.mapView.showsUserLocation = YES;
+    
+    [self.mapView setUserInteractionEnabled:YES];
+    [self.mapView setUserTrackingMode:MKUserTrackingModeFollow];
     
     
     
@@ -90,11 +106,12 @@
     }];
 }
 
--(void)findVetLocations: (CLPlacemark *)placemarks
+-(void)findVetLocations: (CLPlacemark *)placemark
 {
     MKLocalSearchRequest *request = [MKLocalSearchRequest new];
     request.naturalLanguageQuery = @"vet";
-    request.region = MKCoordinateRegionMake(placemarks.location.coordinate, MKCoordinateSpanMake(1, 1));
+    request.region = MKCoordinateRegionMake(placemark.location.coordinate, MKCoordinateSpanMake(1, 1));
+    
     
     MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
     [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
@@ -105,28 +122,28 @@
         
         foundVetLocations = mapitems;
         [self.myTableView reloadData];
+        
+        CLLocationCoordinate2D min, max;
+        min = max = placemark.location.coordinate;
+        //Setting annotations 
+        for (MKMapItem *item in mapitems) {
+            MKPointAnnotation *pin = [MKPointAnnotation new];
+            pin.coordinate = item.placemark.location.coordinate;
+            [self.mapView addAnnotation:pin];
+            //Setting a box perimeter for annotations
+            min.latitude = MIN(pin.coordinate.latitude, min.latitude);
+            max.latitude = MAX(pin.coordinate.latitude, min.latitude);
+            min.longitude = MIN(pin.coordinate.longitude, min.longitude);
+            max.longitude = MAX(pin.coordinate.longitude, min.longitude);
+        }
+        
+        MKCoordinateSpan span = MKCoordinateSpanMake(max.latitude - min.latitude, max.longitude - min.longitude);
+        MKCoordinateRegion region = MKCoordinateRegionMake(placemark.location.coordinate, span);
+        [self.mapView setRegion:region animated:YES];
 
         NSLog(@"%@", mapitem);
         NSLog(@"%@", address);
         
-        NSString *location = @"FormattedAddressLines";
-        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-        [geocoder geocodeAddressString:location
-                     completionHandler:^(NSArray* placemarks, NSError* error){
-                         if (placemarks && placemarks.count > 0) {
-                             CLPlacemark *topResult = [placemarks objectAtIndex:0];
-                             MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:topResult];
-                             
-                             MKCoordinateRegion region = self.mapView.region;
-                             region.center = [(CLCircularRegion *)placemark.region center];
-                             region.span.longitudeDelta /= 8.0;
-                             region.span.latitudeDelta /= 8.0;
-                             
-                             [self.mapView setRegion:region animated:YES];
-                             [self.mapView addAnnotation:placemark];
-                         }
-                     }
-         ];
         
     }];
     
