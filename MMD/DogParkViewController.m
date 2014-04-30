@@ -121,9 +121,6 @@
                 pin.coordinate = item.placemark.location.coordinate;
                 [self.mapView addAnnotation:pin];
 
-                
-
-
                 //Setting a box perimeter for annotations
                 min.latitude = MIN(pin.coordinate.latitude, min.latitude);
                 max.latitude = MAX(pin.coordinate.latitude, min.latitude);
