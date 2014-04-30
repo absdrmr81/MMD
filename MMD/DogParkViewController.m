@@ -12,14 +12,13 @@
 #import <Parse/Parse.h>
 #import "SWRevealViewController.h"
 
-@interface DogParkViewController () <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface DogParkViewController () <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate>
 {
     NSArray *foundDogParks;
     NSString *address;
+    MKMapView *mapView;
    
 }
-
-
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property CLLocationManager *locationManager;
@@ -41,12 +40,12 @@
     MKCoordinateRegion region;
     region.span = span;
     region.center = start;
-//    
-//    [self.mapView setRegion:region animated:YES];
-//    self.mapView.showsUserLocation = YES;
-//    
-//    [self.mapView setUserInteractionEnabled:YES];
-//    [self.mapView setUserTrackingMode:MKUserTrackingModeFollow];
+    
+    [self.mapView setRegion:region animated:YES];
+    self.mapView.showsUserLocation = YES;
+    
+    [self.mapView setUserInteractionEnabled:YES];
+    [self.mapView setUserTrackingMode:MKUserTrackingModeFollow];
     
     
     
@@ -102,7 +101,7 @@
     {
         MKLocalSearchRequest *request = [MKLocalSearchRequest new];
         request.naturalLanguageQuery = @"Dog parks";
-        request.region = MKCoordinateRegionMake(placemark.location.coordinate, MKCoordinateSpanMake(1, 1));
+        request.region = MKCoordinateRegionMake(placemark.location.coordinate, MKCoordinateSpanMake(5, 5));
         
         MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
         [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
