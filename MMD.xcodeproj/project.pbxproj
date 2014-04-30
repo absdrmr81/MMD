@@ -52,8 +52,6 @@
 		9386DB2818FE0E1A0077D942 /* GreetingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9386DB2718FE0E1A0077D942 /* GreetingsViewController.m */; };
 		9386DB2E18FE0E6D0077D942 /* BreedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9386DB2D18FE0E6D0077D942 /* BreedViewController.m */; };
 		9386DB3418FE0F430077D942 /* CalculateAgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9386DB3318FE0F430077D942 /* CalculateAgeViewController.m */; };
-		93D23310191169D400E432D8 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D2330F191169D400E432D8 /* MapAnnotation.m */; };
-		93D2331319117CF800E432D8 /* ParkDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D2331219117CF800E432D8 /* ParkDetailViewController.m */; };
 		93EB068E18FEED6800562371 /* ConfirmationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EB068D18FEED6800562371 /* ConfirmationViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -131,10 +129,6 @@
 		9386DB2D18FE0E6D0077D942 /* BreedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BreedViewController.m; sourceTree = "<group>"; };
 		9386DB3218FE0F430077D942 /* CalculateAgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculateAgeViewController.h; sourceTree = "<group>"; };
 		9386DB3318FE0F430077D942 /* CalculateAgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculateAgeViewController.m; sourceTree = "<group>"; };
-		93D2330E191169D400E432D8 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapAnnotation.h; path = ../../../../Drmrboy/MobileMakersDir/MMD/MMD/MapAnnotation.h; sourceTree = "<group>"; };
-		93D2330F191169D400E432D8 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapAnnotation.m; path = ../../../../Drmrboy/MobileMakersDir/MMD/MMD/MapAnnotation.m; sourceTree = "<group>"; };
-		93D2331119117CF800E432D8 /* ParkDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParkDetailViewController.h; path = ../../../../Drmrboy/MobileMakersDir/MMD/MMD/ParkDetailViewController.h; sourceTree = "<group>"; };
-		93D2331219117CF800E432D8 /* ParkDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParkDetailViewController.m; path = ../../../../Drmrboy/MobileMakersDir/MMD/MMD/ParkDetailViewController.m; sourceTree = "<group>"; };
 		93EB068C18FEED6800562371 /* ConfirmationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmationViewController.h; sourceTree = "<group>"; };
 		93EB068D18FEED6800562371 /* ConfirmationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -223,10 +217,6 @@
 				26182F6B18FC865E00D5DB61 /* Main.storyboard */,
 				26223BD1190AF9040005BD26 /* DogParkViewController.h */,
 				26223BD2190AF9040005BD26 /* DogParkViewController.m */,
-				93D2331119117CF800E432D8 /* ParkDetailViewController.h */,
-				93D2331219117CF800E432D8 /* ParkDetailViewController.m */,
-				93D2330E191169D400E432D8 /* MapAnnotation.h */,
-				93D2330F191169D400E432D8 /* MapAnnotation.m */,
 				26223BD8190C69760005BD26 /* VetViewController.h */,
 				26223BD9190C69760005BD26 /* VetViewController.m */,
 				935777A4190828C0004D8AAC /* MapViewController.h */,
@@ -423,7 +413,6 @@
 				9346807018FECC6100B351AD /* LoginViewController.m in Sources */,
 				935777A919088DFD004D8AAC /* ProfileViewController.m in Sources */,
 				26182F6A18FC865E00D5DB61 /* AppDelegate.m in Sources */,
-				93D23310191169D400E432D8 /* MapAnnotation.m in Sources */,
 				937BC619190C5B940055AFA0 /* CameraTableViewController.m in Sources */,
 				26182F6618FC865E00D5DB61 /* main.m in Sources */,
 				9386DB2518FE0DF60077D942 /* NamesViewController.m in Sources */,

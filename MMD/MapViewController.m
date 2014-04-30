@@ -26,6 +26,7 @@
 @property MKPointAnnotation *currentPlaceAnnotation;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) NSMutableArray *title;
+@property (strong, nonatomic) PFGeoPoint *userLocation;
 
 
 
@@ -38,6 +39,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
+        if (!error) {
+            self.userLocation = geoPoint;
+        }
+    }];
     
     
     //Add UIBarButton button to Navigation bar programatically
@@ -119,11 +126,30 @@
     }];
     
     
-    MKMapView * map = [[MKMapView alloc] initWithFrame:self.view.bounds];
+    MKMapView *map = [[MKMapView alloc] initWithFrame:self.view.bounds];
     
     //Call this method
     [self CurrentLocationIdentifier];
 }
+
+//- (PFQuery *)queryForTable
+//{
+//    if (!self.userLocation) {
+//        return nil;
+//    }
+//    
+//    PFGeoPoint *userGeoPoint = self.userLocation;
+//    
+//    PFQuery *query = [PFQuery queryWithClassName:@"MainInfo"];
+//    
+//    [query whereKey:@"geoPoint" nearGeoPoint:userGeoPoint];
+//    
+//    query.limit = 10;
+//    
+////    _placesObjects = [query findObjects];
+//    
+//    return query;
+//}
 
 
 //Current Location Address
@@ -180,6 +206,8 @@
           ------*/
      }];
 }
+
+
 
 
 - (void)viewWillAppear:(BOOL)animated

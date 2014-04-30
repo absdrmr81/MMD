@@ -9,20 +9,41 @@
 #import "DogParkViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+<<<<<<< HEAD
 #import "ParkDetailViewController.h"
+=======
+#import <Parse/Parse.h>
+>>>>>>> a410183517fe5af65898ec3eefcae5d57ba48ff6
 #import "MapAnnotation.h"
 #import "SWRevealViewController.h"
 
 
+<<<<<<< HEAD
 @interface DogParkViewController () <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate>
 {
     NSArray *foundDogParks;
     NSString *address;
 }
 @property (strong, nonatomic) IBOutlet MKMapView *parkMapView;
+=======
+@interface DogParkViewController () <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate>
+{
+    NSArray *foundDogParks;
+    NSString *address;
+    MKMapView *mapView;
+   
+}
+
+
+@property (strong, nonatomic) NSArray *foundDogParks;
+@property (strong, nonatomic) NSString *address;
+
+
+>>>>>>> a410183517fe5af65898ec3eefcae5d57ba48ff6
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property CLLocationManager *locationManager;
+
 @end
 
 @implementation DogParkViewController
@@ -31,6 +52,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    MKCoordinateSpan span;
+    CLLocationCoordinate2D start;
+    
+    //create region
+    MKCoordinateRegion region;
+    region.span = span;
+    region.center = start;
+//    
+//    [self.mapView setRegion:region animated:YES];
+//    self.mapView.showsUserLocation = YES;
+//    
+//    [self.mapView setUserInteractionEnabled:YES];
+//    [self.mapView setUserTrackingMode:MKUserTrackingModeFollow];
+    
+    
     
     [CLLocationManager locationServicesEnabled];
 
@@ -80,11 +118,11 @@
 }
 
 
-- (void)foundDogParks: (CLPlacemark *)placemarks
+- (void)foundDogParks: (CLPlacemark *)placemark
     {
         MKLocalSearchRequest *request = [MKLocalSearchRequest new];
         request.naturalLanguageQuery = @"Dog parks";
-        request.region = MKCoordinateRegionMake(placemarks.location.coordinate, MKCoordinateSpanMake(1, 1));
+        request.region = MKCoordinateRegionMake(placemark.location.coordinate, MKCoordinateSpanMake(1, 1));
         
         MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
         [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
@@ -94,6 +132,28 @@
             
             foundDogParks = mapitems;
             [self.myTableView reloadData];
+            
+            CLLocationCoordinate2D min, max;
+            min = max = placemark.location.coordinate;
+            //Setting annotations
+            for (MKMapItem *item in mapitems) {
+                MKPointAnnotation *pin = [MKPointAnnotation new];
+                pin.coordinate = item.placemark.location.coordinate;
+                [self->mapView addAnnotation:pin];
+                //Setting a box perimeter for annotations
+                min.latitude = MIN(pin.coordinate.latitude, min.latitude);
+                max.latitude = MAX(pin.coordinate.latitude, min.latitude);
+                min.longitude = MIN(pin.coordinate.longitude, min.longitude);
+                max.longitude = MAX(pin.coordinate.longitude, min.longitude);
+                
+            }
+            
+            MKCoordinateSpan span = MKCoordinateSpanMake(max.latitude - min.latitude, max.longitude - min.longitude);
+            MKCoordinateRegion region = MKCoordinateRegionMake(placemark.location.coordinate, span);
+            [self->mapView setRegion:region animated:YES];
+            
+            
+            
             
             NSLog(@"%@", mapitem);
             NSLog(@"%@", address);
@@ -142,14 +202,30 @@
     
     //Showing Address in subtitle in TableView cell
     cell.detailTextLabel.text = [[parkLocations.placemark.addressDictionary objectForKey:@"FormattedAddressLines"] componentsJoinedByString:@"\n"];
-    
-    
-//    cell.detailTextLabel.text = parkLocations.description;
-
-    
     return cell;
 }
-- (IBAction)startFindingDogParksButton:(id)sender
+
+
+
+//- (PFQuery *)queryForTable
+//{
+//    if (!self.userLocation) {
+//        return nil;
+//    }
+//
+//    PFGeoPoint *userGeoPoint = self.userLocation;
+//
+//    PFQuery *query = [PFQuery queryWithClassName:@"MainInfo"];
+//
+//    [query whereKey:@"geoPoint" nearGeoPoint:userGeoPoint];
+//
+//    query.limit = 10;
+//
+////    _placesObjects = [query findObjects];
+//
+//    return query;
+//}
+- (IBAction)searchParks:(id)sender
 {
     [self.locationManager startUpdatingLocation];
 }
