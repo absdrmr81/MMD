@@ -23,6 +23,7 @@
 }
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property CLLocationManager *locationManager;
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
 
 @end
 
@@ -152,6 +153,7 @@
     
 }
 
+<<<<<<< HEAD
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -159,6 +161,10 @@
 
 //Button search for Vets in current location
 - (IBAction)startFindingVetButton:(id)sender
+=======
+
+- (IBAction)searchVets:(id)sender
+>>>>>>> e2247e874164aa72e0a26385d440a2839c0b9c1e
 {
     [self.locationManager startUpdatingLocation];
 }

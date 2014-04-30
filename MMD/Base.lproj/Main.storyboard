@@ -497,7 +497,7 @@ Tell us a little about your dog.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQm-Bq-6VF">
-                                <rect key="frame" x="98" y="285" width="40" height="23"/>
+                                <rect key="frame" x="98" y="323" width="40" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -510,22 +510,22 @@ Tell us a little about your dog.</string>
                                 <color key="textColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDE-Sk-IGQ">
-                                <rect key="frame" x="143" y="256" width="35" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDE-Sk-IGQ">
+                                <rect key="frame" x="129" y="252" width="62" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" red="0.2274509804" green="0.70980392160000005" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Breed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pK-6l-t6m">
-                                <rect key="frame" x="135" y="322" width="51" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Breed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pK-6l-t6m">
+                                <rect key="frame" x="135" y="360" width="61" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" red="0.2274509804" green="0.70980392160000005" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="dog years" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mmq-Io-fzS">
-                                <rect key="frame" x="135" y="285" width="88" height="23"/>
+                                <rect key="frame" x="135" y="323" width="88" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.48627450979999998" green="0.54901960780000003" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -844,6 +844,9 @@ Tell us a little about your dog.</string>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="kBs-Df-6zd" kind="push" identifier="mySegue" id="Ubc-DH-dTl"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -873,7 +876,26 @@ Tell us a little about your dog.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ev-dl-ok0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="778" y="822"/>
+            <point key="canvasLocation" x="686" y="858"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0ka-VR-S8I">
+            <objects>
+                <viewController id="kBs-Df-6zd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tUn-CD-9pZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="jil-ef-sdi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z2p-dW-uzL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rXX-c9-xRn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dfj-Ba-qWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1172" y="878"/>
         </scene>
         <!--Vet View Controller - Vets-->
         <scene sceneID="jta-QJ-n6T">
@@ -926,28 +948,33 @@ Tell us a little about your dog.</string>
                                 </connections>
                             </tableView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qBh-i9-FMM">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="249"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="199"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34T-36-d0w">
+                                <rect key="frame" x="95" y="212" width="125" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Search Vets!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchVets:" destination="0sE-W6-99h" eventType="touchUpInside" id="W9w-ZU-bHj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Vets" id="OY1-ul-QDp">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="dV8-x3-ZX9">
-                            <connections>
-                                <action selector="startFindingVetButton:" destination="0sE-W6-99h" id="1Ye-ZH-3Cu"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Vets" id="OY1-ul-QDp"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="mapView" destination="qBh-i9-FMM" id="3S7-Kv-36Y"/>
                         <outlet property="myTableView" destination="VTZ-Wv-RJc" id="Ymj-cG-Jp8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ARO-wj-nES" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1267" y="806"/>
+            <point key="canvasLocation" x="1457" y="-8"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="80N-Lu-Gmd">
@@ -1012,6 +1039,6 @@ Tell us a little about your dog.</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="nsn-KV-yPL"/>
+        <segue reference="msM-ci-x1G"/>
     </inferredMetricsTieBreakers>
 </document>

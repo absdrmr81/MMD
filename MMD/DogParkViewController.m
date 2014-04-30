@@ -101,6 +101,27 @@
         
     }
 
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    if (annotation == mapView.userLocation)
+    {
+        return nil;
+    }
+    MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
+    pin.image = [UIImage imageNamed:@"ic_geo_dog"];
+    pin.canShowCallout = YES;
+    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    
+    return pin;
+}
+
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    [self performSegueWithIdentifier:@"mySegue" sender:view];
+}
+
+
 #pragma mark -- TableView Logic
     
 
