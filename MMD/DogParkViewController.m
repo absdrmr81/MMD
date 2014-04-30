@@ -139,7 +139,7 @@
             for (MKMapItem *item in mapitems) {
                 MKPointAnnotation *pin = [MKPointAnnotation new];
                 pin.coordinate = item.placemark.location.coordinate;
-                [self->mapView addAnnotation:pin];
+                [self.mapView addAnnotation:pin];
                 
                 //Setting a box perimeter for annotations
                 min.latitude = MIN(pin.coordinate.latitude, min.latitude);
@@ -151,7 +151,7 @@
             
             MKCoordinateSpan span = MKCoordinateSpanMake(max.latitude - min.latitude, max.longitude - min.longitude);
             MKCoordinateRegion region = MKCoordinateRegionMake(placemark.location.coordinate, span);
-            [self->mapView setRegion:region animated:YES];
+            [self.mapView setRegion:region animated:YES];
             
             
             
