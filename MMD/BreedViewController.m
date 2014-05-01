@@ -33,7 +33,7 @@
     self.dogNameLabel.text = self.dogNameString;
     user = [PFUser currentUser];
 
-    NSArray *breeds = @[@"Beagle", @"Boxer", @"Bulldog", @"Dachshund", @"German Shepherd", @"Golden Retriever", @"Labrador Retriever", @"Poodle", @"Rottweiler", @"Yorkshire Terrier"];
+    NSArray *breeds = @[@"Afghan Hound", @"Aidi", @"Airedale Terrier", @"Akita Inu", @"Alaskan Klee Kai", @"Alaskan Malamute", @"American Cocker Spaniel",  @"Beagle", @"Boxer", @"Bulldog", @"Dachshund", @"German Shepherd", @"Golden Retriever", @"Great Dane", @"Labrador Retriever", @"Poodle", @"Rottweiler", @"Yorkshire Terrier"];
     array = breeds;
     self.breedPicker.delegate = self;
     
