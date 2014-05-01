@@ -189,7 +189,10 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
     //create a query for user in Parse
     PFQuery *query = [PFUser query];
     
-    [query whereKey:@"objectId" notEqualTo:[[PFUser currentUser]objectId ]]; //do not get the current user
+    NSLog(@"current user = %@", [PFUser currentUser]);
+    NSLog(@"objectid  = %@", [[PFUser currentUser] objectId]);
+    
+    [query whereKey:@"objectId" notEqualTo:[[PFUser currentUser] objectId]]; //do not get the current user
     [query includeKey:@"location"];
     
     //execute the query

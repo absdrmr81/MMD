@@ -752,11 +752,11 @@ Tell us a little about your dog.</string>
                                     <segue destination="0sE-W6-99h" kind="custom" customClass="SWRevealViewControllerSegue" id="9Ag-90-HJV"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Gallery" id="CXm-A4-30b">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Gallery" id="CXm-A4-30b">
                                 <rect key="frame" x="0.0" y="242" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CXm-A4-30b" id="tWL-k5-ma6">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gallery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4G8-V0-Rmr" userLabel="Label - Vets">
@@ -774,7 +774,7 @@ Tell us a little about your dog.</string>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <segue destination="cSq-K5-5Op" kind="push" id="nCZ-Se-KGB"/>
+                                    <segue destination="dm5-xr-Q7Z" kind="custom" customClass="SWRevealViewControllerSegue" id="5Dz-sE-ejh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -921,7 +921,7 @@ Tell us a little about your dog.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ev-dl-ok0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="884" y="566"/>
+            <point key="canvasLocation" x="932" y="988"/>
         </scene>
         <!--Park Detail Table View Controller-->
         <scene sceneID="0ka-VR-S8I">
@@ -941,6 +941,62 @@ Tell us a little about your dog.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dfj-Ba-qWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1534" y="766"/>
+        </scene>
+        <!--Vertical Gallery View Controller-->
+        <scene sceneID="syP-FH-gMK">
+            <objects>
+                <viewController id="dm5-xr-Q7Z" customClass="VerticalGalleryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0V9-9E-IAR"/>
+                        <viewControllerLayoutGuide type="bottom" id="jof-7k-jqz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5ZN-S1-DdW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8gg-KL-0oR">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="0.96078431369999995" blue="0.70588235290000001" alpha="1" colorSpace="deviceRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vle-Ns-ZZt">
+                                    <size key="itemSize" width="274" height="218"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyCell" id="uJg-2J-rYT" customClass="MyCollectionViewCell">
+                                        <rect key="frame" x="23" y="0.0" width="274" height="218"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="274" height="218"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i71-OI-QUB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="319" height="235"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="imageView" destination="i71-OI-QUB" id="nra-Ca-VGq"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="dm5-xr-Q7Z" id="OpM-6o-ff1"/>
+                                    <outlet property="delegate" destination="dm5-xr-Q7Z" id="cwY-WS-0th"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8GK-jL-m22"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w8H-0Q-Np8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1028" y="188"/>
         </scene>
         <!--Vet View Controller - Vets-->
         <scene sceneID="jta-QJ-n6T">
@@ -1010,45 +1066,6 @@ Tell us a little about your dog.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ARO-wj-nES" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1985" y="-304"/>
-        </scene>
-        <!--Galleria View Controller-->
-        <scene sceneID="alE-vv-3sx">
-            <objects>
-                <viewController id="cSq-K5-5Op" customClass="GalleriaViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ddv-Sf-wd9"/>
-                        <viewControllerLayoutGuide type="bottom" id="F0U-Pj-tBS"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Wch-Mp-pcb">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tbI-cf-cmp">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="442"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meo-bO-hmZ">
-                                <rect key="frame" x="111" y="471" width="98" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Take Photo">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="camerButtonPressed:" destination="cSq-K5-5Op" eventType="touchUpInside" id="EXN-my-eFJ"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="VAp-pT-Vht"/>
-                    <connections>
-                        <outlet property="cameraButton" destination="meo-bO-hmZ" id="XkC-ZE-o8z"/>
-                        <outlet property="myScrollView" destination="tbI-cf-cmp" id="k71-iu-c2y"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hZL-8N-kde" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1676" y="232"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="80N-Lu-Gmd">

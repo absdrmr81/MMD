@@ -23,6 +23,8 @@
 		26223BD3190AF9040005BD26 /* DogParkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26223BD2190AF9040005BD26 /* DogParkViewController.m */; };
 		26223BDA190C69760005BD26 /* VetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26223BD9190C69760005BD26 /* VetViewController.m */; };
 		268EC9771912247C00B0BD4E /* GalleriaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 268EC9751912247C00B0BD4E /* GalleriaViewController.m */; };
+		930FBA4F19129D6B008FB30B /* VerticalGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 930FBA4E19129D6B008FB30B /* VerticalGalleryViewController.m */; };
+		930FBA521912A186008FB30B /* MyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 930FBA511912A186008FB30B /* MyCollectionViewCell.m */; };
 		9318672A1900663700C9C48A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 931867291900663700C9C48A /* MapKit.framework */; };
 		9346806D18FECC1600B351AD /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9346806C18FECC1600B351AD /* SignUpViewController.m */; };
 		9346807018FECC6100B351AD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9346806F18FECC6100B351AD /* LoginViewController.m */; };
@@ -83,6 +85,10 @@
 		26223BD9190C69760005BD26 /* VetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VetViewController.m; sourceTree = "<group>"; };
 		268EC9751912247C00B0BD4E /* GalleriaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GalleriaViewController.m; path = ../GalleriaViewController.m; sourceTree = "<group>"; };
 		268EC9761912247C00B0BD4E /* GalleriaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GalleriaViewController.h; path = ../GalleriaViewController.h; sourceTree = "<group>"; };
+		930FBA4D19129D6B008FB30B /* VerticalGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalGalleryViewController.h; sourceTree = "<group>"; };
+		930FBA4E19129D6B008FB30B /* VerticalGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalGalleryViewController.m; sourceTree = "<group>"; };
+		930FBA501912A186008FB30B /* MyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewCell.h; sourceTree = "<group>"; };
+		930FBA511912A186008FB30B /* MyCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewCell.m; sourceTree = "<group>"; };
 		931867291900663700C9C48A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9346806B18FECC1600B351AD /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		9346806C18FECC1600B351AD /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
@@ -204,6 +210,10 @@
 				26182F6818FC865E00D5DB61 /* AppDelegate.h */,
 				26182F6918FC865E00D5DB61 /* AppDelegate.m */,
 				26182F6B18FC865E00D5DB61 /* Main.storyboard */,
+				930FBA501912A186008FB30B /* MyCollectionViewCell.h */,
+				930FBA511912A186008FB30B /* MyCollectionViewCell.m */,
+				930FBA4D19129D6B008FB30B /* VerticalGalleryViewController.h */,
+				930FBA4E19129D6B008FB30B /* VerticalGalleryViewController.m */,
 				26223BD1190AF9040005BD26 /* DogParkViewController.h */,
 				26223BD2190AF9040005BD26 /* DogParkViewController.m */,
 				268EC9761912247C00B0BD4E /* GalleriaViewController.h */,
@@ -396,7 +406,9 @@
 				26223BD3190AF9040005BD26 /* DogParkViewController.m in Sources */,
 				9386DB2818FE0E1A0077D942 /* GreetingsViewController.m in Sources */,
 				9346806D18FECC1600B351AD /* SignUpViewController.m in Sources */,
+				930FBA4F19129D6B008FB30B /* VerticalGalleryViewController.m in Sources */,
 				93EB068E18FEED6800562371 /* ConfirmationViewController.m in Sources */,
+				930FBA521912A186008FB30B /* MyCollectionViewCell.m in Sources */,
 				935777A6190828C0004D8AAC /* MapViewController.m in Sources */,
 				9357779519081FF9004D8AAC /* SWRevealViewController.m in Sources */,
 				268EC9771912247C00B0BD4E /* GalleriaViewController.m in Sources */,
