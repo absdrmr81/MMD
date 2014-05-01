@@ -9,7 +9,7 @@
 #import "VetViewController.h"
 #import "SWRevealViewController.h"
 
-@interface VetViewController () <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, MKAnnotation, MKMapViewDelegate>
+@interface VetViewController () <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate>
 {
     NSArray *foundVetLocations;
     NSString *address;

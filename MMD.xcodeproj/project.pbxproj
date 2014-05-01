@@ -43,7 +43,6 @@
 		935777A3190827AC004D8AAC /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935777A2190827AC004D8AAC /* PhotoViewController.m */; };
 		935777A6190828C0004D8AAC /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935777A5190828C0004D8AAC /* MapViewController.m */; };
 		935777A919088DFD004D8AAC /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935777A819088DFD004D8AAC /* ProfileViewController.m */; };
-		937BC619190C5B940055AFA0 /* CameraTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 937BC618190C5B940055AFA0 /* CameraTableViewController.m */; };
 		9386DB2518FE0DF60077D942 /* NamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9386DB2418FE0DF60077D942 /* NamesViewController.m */; };
 		9386DB2818FE0E1A0077D942 /* GreetingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9386DB2718FE0E1A0077D942 /* GreetingsViewController.m */; };
 		9386DB2E18FE0E6D0077D942 /* BreedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9386DB2D18FE0E6D0077D942 /* BreedViewController.m */; };
@@ -114,8 +113,6 @@
 		935777A5190828C0004D8AAC /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		935777A719088DFC004D8AAC /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		935777A819088DFD004D8AAC /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
-		937BC617190C5B940055AFA0 /* CameraTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraTableViewController.h; sourceTree = "<group>"; };
-		937BC618190C5B940055AFA0 /* CameraTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraTableViewController.m; sourceTree = "<group>"; };
 		9386DB2318FE0DF60077D942 /* NamesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NamesViewController.h; sourceTree = "<group>"; };
 		9386DB2418FE0DF60077D942 /* NamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NamesViewController.m; sourceTree = "<group>"; };
 		9386DB2618FE0E1A0077D942 /* GreetingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreetingsViewController.h; sourceTree = "<group>"; };
@@ -224,8 +221,6 @@
 				935777A5190828C0004D8AAC /* MapViewController.m */,
 				935777A1190827AC004D8AAC /* PhotoViewController.h */,
 				935777A2190827AC004D8AAC /* PhotoViewController.m */,
-				937BC617190C5B940055AFA0 /* CameraTableViewController.h */,
-				937BC618190C5B940055AFA0 /* CameraTableViewController.m */,
 				9357779619082094004D8AAC /* SidebarViewController.h */,
 				9357779719082094004D8AAC /* SidebarViewController.m */,
 				935777A719088DFC004D8AAC /* ProfileViewController.h */,
@@ -400,7 +395,6 @@
 				9346807018FECC6100B351AD /* LoginViewController.m in Sources */,
 				935777A919088DFD004D8AAC /* ProfileViewController.m in Sources */,
 				26182F6A18FC865E00D5DB61 /* AppDelegate.m in Sources */,
-				937BC619190C5B940055AFA0 /* CameraTableViewController.m in Sources */,
 				26182F6618FC865E00D5DB61 /* main.m in Sources */,
 				9386DB2518FE0DF60077D942 /* NamesViewController.m in Sources */,
 				26223BD3190AF9040005BD26 /* DogParkViewController.m in Sources */,

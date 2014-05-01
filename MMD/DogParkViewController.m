@@ -176,7 +176,7 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
 {
     [self getUserFromParse:^(NSArray *objects, NSError *error)
     {
-        __weak DogParkViewController* dvc = self;
+//        __weak DogParkViewController* dvc = self;
         _tempUsers = objects;
         
     }];

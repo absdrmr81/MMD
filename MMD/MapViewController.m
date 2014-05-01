@@ -121,7 +121,7 @@
     }];
     
     
-    MKMapView *map = [[MKMapView alloc] initWithFrame:self.view.bounds];
+//    MKMapView *map = [[MKMapView alloc] initWithFrame:self.view.bounds];
     
     //Call this method
     [self CurrentLocationIdentifier];
@@ -153,8 +153,8 @@
              CLPlacemark *placemark = [placemarks objectAtIndex:0];
              NSLog(@"\nCurrent Location Detected\n");
              NSLog(@"placemark %@",placemark);
-             NSString *locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
-             NSString *Address = [[NSString alloc]initWithString:locatedAt];
+//             NSString *locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
+//             NSString *Address = [[NSString alloc]initWithString:locatedAt];
              NSString *Area = [[NSString alloc]initWithString:placemark.locality];
              NSString *Country = [[NSString alloc]initWithString:placemark.country];
              NSString *CountryArea = [NSString stringWithFormat:@"%@, %@", Area,Country];
