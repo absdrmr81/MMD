@@ -68,6 +68,13 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
     
     [self getUsersFromParse];
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    //Automatically search for Dog Parks in area
+    [self.locationManager startUpdatingLocation];
+
+}
     
 #pragma mark -- Location Logic
 
@@ -161,7 +168,7 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
     return pin;
 }
 
-
+//Getting users from Parse
 -(void)getUsersFromParse
 {
     [self getUserFromParse:^(NSArray *objects, NSError *error)
@@ -224,12 +231,6 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
     
     return cell;
 }
-
-- (IBAction)searchParks:(id)sender
-{
-    [self.locationManager startUpdatingLocation];
-}
-
 
 
 @end

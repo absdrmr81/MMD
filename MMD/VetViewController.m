@@ -68,6 +68,12 @@
    
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    //Automatically search for Vets in area
+    [self.locationManager startUpdatingLocation];
+}
+
 #pragma mark -- Location Logic
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
@@ -165,8 +171,6 @@
     //Showing Address in subtitle in TableView cell
     cell.detailTextLabel.text = [[vetLocations.placemark.addressDictionary objectForKey:@"FormattedAddressLines"] componentsJoinedByString:@"\n"];
     
-    
-    
     return cell;
 }
 
@@ -186,41 +190,46 @@
 }
 
 
-- (IBAction)searchVets:(id)sender
-{
-    [self.locationManager startUpdatingLocation];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     
 }
 
--(MKAnnotationView *) mapView:(MKMapView *)mapMKMapView viewForAnnotation: (id<MKAnnotation>)annotation
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    MKPinAnnotationView *MyPin=[[MKPinAnnotationView alloc] initWithAnnotation:annotation       reuseIdentifier:@"myCellID"];
-    MyPin.pinColor = MKPinAnnotationColorPurple; // <--for coloring purpose
+    if (annotation == self.mapView.userLocation)
+    {
+        return nil;
+    }
+    MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
+//    pin.image = [UIImage imageNamed:@"ic_parks_pressed"];
+    pin.canShowCallout = YES;
+    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     
-    UIButton *adverButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    
-    [adverButton addTarget:self action:@selector(button:)forControlEvents:UIControlEventTouchUpInside];
-    
-    MyPin.rightCalloutAccessoryView = adverButton;
-    MyPin.draggable = YES;
-    MyPin.highlighted = YES;
-    MyPin.animatesDrop  = TRUE;
-    MyPin.canShowCallout  = YES;
-    
-    return MyPin;
+    return pin;
 }
 
 
+//-(MKAnnotationView *) mapView:(MKMapView *)mapMKMapView viewForAnnotation: (id<MKAnnotation>)annotation
+//{
+//    MKPinAnnotationView *MyPin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
+////    MyPin.pinColor = MKPinAnnotationColorPurple; // <--for coloring purpose
+//    
+////    UIButton *adverButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+//    
+////    [adverButton addTarget:self action:@selector(button:)forControlEvents:UIControlEventTouchUpInside];
+//    
+//    MyPin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+////    MyPin.draggable = YES;
+////    MyPin.highlighted = YES;
+////    MyPin.animatesDrop  = TRUE;
+//    MyPin.canShowCallout  = YES;
+//    
+//    return MyPin;
+//}
 
--(void)button:(id)sender
-{
-    //add your nextView you want to open here
-}
+
 
 
 @end
