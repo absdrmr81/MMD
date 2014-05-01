@@ -9,7 +9,7 @@
 #import "GalleriaViewController.h"
 #import <Parse/Parse.h>
 
-@interface GalleriaViewController ()<UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface GalleriaViewController ()
 
 {
     UIImageView *imageView;
