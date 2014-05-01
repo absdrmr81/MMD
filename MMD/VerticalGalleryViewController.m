@@ -7,6 +7,7 @@
 //
 
 #import "VerticalGalleryViewController.h"
+#import "SWRevealViewController.h"
 
 @interface VerticalGalleryViewController ()
 
@@ -14,36 +15,45 @@
 
 @implementation VerticalGalleryViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    _dogPix = [@[@"gal0",
+                 @"gal1",
+                 @"gal2",
+                 @"gal3",
+                 @"gal4"] mutableCopy];
+
+    UIBarButtonItem *flipButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_nav_std"] style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
+    //Setting it to left-side of Navi bar
+    self.navigationItem.leftBarButtonItem = flipButton;
+    
+
 }
 
-- (void)didReceiveMemoryWarning
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return 1;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    return _dogPix.count;
 }
-*/
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    MyCollectionViewCell *myCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MyCell" forIndexPath:indexPath];
+    
+    UIImage *image;
+    long row = [indexPath row];
+    
+    image = [UIImage imageNamed:_dogPix[row]];
+    
+    myCell.imageView.image = image;
+    
+    return myCell;
+}
+
 
 @end
