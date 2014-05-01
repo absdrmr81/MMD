@@ -60,7 +60,6 @@
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
     
-    
     CALayer *imageLayer = self.profilePicImageView.layer;
     [imageLayer setCornerRadius:51];
     [imageLayer setBorderWidth:1];
@@ -98,12 +97,7 @@
     self.picker1 = [[UIImagePickerController new] init];
 	self.picker1.delegate = self;
     [self.picker1 setSourceType:UIImagePickerControllerSourceTypeCamera];
-//    
-//	if((UIButton *) sender == self.profilePicButton)
-//    {
-//        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-//	}
-    [self presentViewController:self.picker1 animated:YES completion:nil];
+    [self presentViewController:self.picker1 animated:YES completion:NULL];
     
 }
 
@@ -112,12 +106,7 @@
     self.picker2 = [[UIImagePickerController alloc] init];
 	self.picker2.delegate = self;
     [self.picker2 setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-//    
-//	if((UIButton *) sender == self.profilePicButton)
-//    {
-//        picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-//	}
-    [self presentViewController:self.picker2 animated:YES completion:nil];
+    [self presentViewController:self.picker2 animated:YES completion:NULL];
 }
 
 
@@ -140,10 +129,8 @@
         }
     }];
     
-    [user save];
+    [user saveInBackground];
 }
-
-
 
 - (IBAction)logOut:(id)sender
 {

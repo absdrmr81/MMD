@@ -96,7 +96,7 @@
         }
     }];
     
-    [user save];
+    [user saveInBackground];
 }
 
 //returning the view we intend to zoom (doing this is case of multiple views (scrollview need to know specifically which view to scroll)
