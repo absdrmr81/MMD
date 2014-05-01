@@ -40,7 +40,7 @@
 		9346808418FED1E900B351AD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9346808318FED1E900B351AD /* SystemConfiguration.framework */; };
 		9357779519081FF9004D8AAC /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9357779419081FF9004D8AAC /* SWRevealViewController.m */; };
 		9357779819082094004D8AAC /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9357779719082094004D8AAC /* SidebarViewController.m */; };
-		935777A3190827AC004D8AAC /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935777A2190827AC004D8AAC /* PhotoViewController.m */; };
+		935777A3190827AC004D8AAC /* GroomingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935777A2190827AC004D8AAC /* GroomingViewController.m */; };
 		935777A6190828C0004D8AAC /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935777A5190828C0004D8AAC /* MapViewController.m */; };
 		935777A919088DFD004D8AAC /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935777A819088DFD004D8AAC /* ProfileViewController.m */; };
 		9386DB2518FE0DF60077D942 /* NamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9386DB2418FE0DF60077D942 /* NamesViewController.m */; };
@@ -107,8 +107,8 @@
 		9357779419081FF9004D8AAC /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		9357779619082094004D8AAC /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
 		9357779719082094004D8AAC /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
-		935777A1190827AC004D8AAC /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
-		935777A2190827AC004D8AAC /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
+		935777A1190827AC004D8AAC /* GroomingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroomingViewController.h; sourceTree = "<group>"; };
+		935777A2190827AC004D8AAC /* GroomingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroomingViewController.m; sourceTree = "<group>"; };
 		935777A4190828C0004D8AAC /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		935777A5190828C0004D8AAC /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		935777A719088DFC004D8AAC /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
@@ -219,8 +219,8 @@
 				26223BD9190C69760005BD26 /* VetViewController.m */,
 				935777A4190828C0004D8AAC /* MapViewController.h */,
 				935777A5190828C0004D8AAC /* MapViewController.m */,
-				935777A1190827AC004D8AAC /* PhotoViewController.h */,
-				935777A2190827AC004D8AAC /* PhotoViewController.m */,
+				935777A1190827AC004D8AAC /* GroomingViewController.h */,
+				935777A2190827AC004D8AAC /* GroomingViewController.m */,
 				9357779619082094004D8AAC /* SidebarViewController.h */,
 				9357779719082094004D8AAC /* SidebarViewController.m */,
 				935777A719088DFC004D8AAC /* ProfileViewController.h */,
@@ -407,7 +407,7 @@
 				9357779519081FF9004D8AAC /* SWRevealViewController.m in Sources */,
 				268EC9771912247C00B0BD4E /* GalleriaViewController.m in Sources */,
 				26223BDA190C69760005BD26 /* VetViewController.m in Sources */,
-				935777A3190827AC004D8AAC /* PhotoViewController.m in Sources */,
+				935777A3190827AC004D8AAC /* GroomingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 
 #import "SidebarViewController.h"
 #import "SWRevealViewController.h"
-#import "PhotoViewController.h"
+#import "GroomingViewController.h"
 #import "BreedViewController.h"
 
 @interface SidebarViewController ()

@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Marlon Simeus. All rights reserved.
 //
 
-#import "PhotoViewController.h"
+#import "GroomingViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import "SWRevealViewController.h"
 #import <Parse/Parse.h>
 #import <MapKit/MapKit.h>
 
 
-@interface PhotoViewController () <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate>
+@interface GroomingViewController () <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate>
 {
     NSArray *foundGroomer;
     NSString *address;
@@ -25,7 +25,7 @@
 
 @end
 
-@implementation PhotoViewController
+@implementation GroomingViewController
 
 
 - (void)viewDidLoad
