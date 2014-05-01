@@ -152,7 +152,7 @@
         return nil;
     }
     MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
-    pin.image = [UIImage imageNamed:@"ic_geo_dog"];
+    pin.image = [UIImage imageNamed:@"ic_parks_pressed"];
     pin.canShowCallout = YES;
     pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     
