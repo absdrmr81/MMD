@@ -699,7 +699,7 @@ Tell us a little about your dog.</string>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <segue destination="v5B-Hj-Kxf" kind="custom" customClass="SWRevealViewControllerSegue" id="dac-wx-jUM"/>
+                                    <segue destination="v5B-Hj-Kxf" kind="custom" identifier="showDogPark" customClass="SWRevealViewControllerSegue" id="dac-wx-jUM"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Grooming" id="LIj-sB-SNm">
@@ -724,7 +724,7 @@ Tell us a little about your dog.</string>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <segue destination="cM3-XG-FPq" kind="custom" customClass="SWRevealViewControllerSegue" id="xhu-Qc-82o"/>
+                                    <segue destination="cM3-XG-FPq" kind="custom" identifier="showGroomers" customClass="SWRevealViewControllerSegue" id="xhu-Qc-82o"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Vets" id="2Uf-Xw-tQg">
@@ -921,7 +921,7 @@ Tell us a little about your dog.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ev-dl-ok0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="764" y="834"/>
+            <point key="canvasLocation" x="884" y="566"/>
         </scene>
         <!--Park Detail Table View Controller-->
         <scene sceneID="0ka-VR-S8I">
@@ -940,7 +940,7 @@ Tell us a little about your dog.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dfj-Ba-qWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1230" y="858"/>
+            <point key="canvasLocation" x="1534" y="766"/>
         </scene>
         <!--Vet View Controller - Vets-->
         <scene sceneID="jta-QJ-n6T">
@@ -1009,7 +1009,7 @@ Tell us a little about your dog.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ARO-wj-nES" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1457" y="-8"/>
+            <point key="canvasLocation" x="1985" y="-304"/>
         </scene>
         <!--Galleria View Controller-->
         <scene sceneID="alE-vv-3sx">
@@ -1048,7 +1048,7 @@ Tell us a little about your dog.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZL-8N-kde" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1048" y="152"/>
+            <point key="canvasLocation" x="1676" y="232"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="80N-Lu-Gmd">
@@ -1077,7 +1077,7 @@ Tell us a little about your dog.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YaG-Wp-PLF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1710" y="698"/>
+            <point key="canvasLocation" x="2562" y="-198"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="U8h-hh-eA6">

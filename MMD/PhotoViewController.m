@@ -7,7 +7,9 @@
 //
 
 #import "PhotoViewController.h"
+#import <CoreLocation/CoreLocation.h>
 #import "SWRevealViewController.h"
+#import <Parse/Parse.h>
 #import <MapKit/MapKit.h>
 
 
@@ -18,6 +20,8 @@
 }
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
+@property (strong, nonatomic) PFGeoPoint *userLocation;
+
 
 @property CLLocationManager *locationManager;
 
@@ -147,11 +151,6 @@
     
 }
 
-- (void)showAnnotations:(NSArray *)annotations animated:(BOOL)animated
-{
-    
-}
-
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
     if (annotation == self.mapView.userLocation)
@@ -168,7 +167,7 @@
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    [self performSegueWithIdentifier:@"mySegue" sender:view];
+    [self performSegueWithIdentifier:@"showGroomers" sender:view];
 }
 
 

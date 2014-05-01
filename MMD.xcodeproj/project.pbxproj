@@ -81,8 +81,8 @@
 		26223BD2190AF9040005BD26 /* DogParkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogParkViewController.m; sourceTree = "<group>"; };
 		26223BD8190C69760005BD26 /* VetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VetViewController.h; sourceTree = "<group>"; };
 		26223BD9190C69760005BD26 /* VetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VetViewController.m; sourceTree = "<group>"; };
-		268EC9751912247C00B0BD4E /* GalleriaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GalleriaViewController.m; sourceTree = "<group>"; };
-		268EC9761912247C00B0BD4E /* GalleriaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GalleriaViewController.h; sourceTree = "<group>"; };
+		268EC9751912247C00B0BD4E /* GalleriaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GalleriaViewController.m; path = ../GalleriaViewController.m; sourceTree = "<group>"; };
+		268EC9761912247C00B0BD4E /* GalleriaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GalleriaViewController.h; path = ../GalleriaViewController.h; sourceTree = "<group>"; };
 		931867291900663700C9C48A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9346806B18FECC1600B351AD /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		9346806C18FECC1600B351AD /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
@@ -160,8 +160,6 @@
 		26182F4D18FC865E00D5DB61 = {
 			isa = PBXGroup;
 			children = (
-				268EC9751912247C00B0BD4E /* GalleriaViewController.m */,
-				268EC9761912247C00B0BD4E /* GalleriaViewController.h */,
 				26182F5F18FC865E00D5DB61 /* MMD */,
 				26182F7E18FC865E00D5DB61 /* MMDTests */,
 				26182F5818FC865E00D5DB61 /* Frameworks */,
@@ -208,6 +206,8 @@
 				26182F6B18FC865E00D5DB61 /* Main.storyboard */,
 				26223BD1190AF9040005BD26 /* DogParkViewController.h */,
 				26223BD2190AF9040005BD26 /* DogParkViewController.m */,
+				268EC9761912247C00B0BD4E /* GalleriaViewController.h */,
+				268EC9751912247C00B0BD4E /* GalleriaViewController.m */,
 				26223BD8190C69760005BD26 /* VetViewController.h */,
 				26223BD9190C69760005BD26 /* VetViewController.m */,
 				935777A4190828C0004D8AAC /* MapViewController.h */,
