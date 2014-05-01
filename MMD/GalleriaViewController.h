@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GalleriaViewController : UIViewController
+@interface GalleriaViewController : UIViewController <UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @end
