@@ -36,7 +36,7 @@
 //    self.tableView.separatorColor = [UIColor colorWithWhite:0.15f alpha:0.2f];
     
     //Showing headers of cells in sidebar
-    _menuItems = @[@"Title", @"Home", @"Parks", @"Vets", @"Gallery"];
+    _menuItems = @[@"Title", @"Home", @"Parks", @"Grooming", @"Vets", @"Gallery"];
     
 }
 
