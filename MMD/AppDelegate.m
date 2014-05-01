@@ -14,7 +14,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [Parse setApplicationId:@"4KRsHXnZVzYMe2ExGI80nXeLkXV1UXXoQhLxwvog" clientKey:@"8Xk4bAEPpmuKFdC9Sh3S7AZdN5KdVKElCmGDlOHh"];
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:76/255.0f green:76/255.0f blue:66/255.0f alpha:1.0f]];
     return YES;
+    
+    
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

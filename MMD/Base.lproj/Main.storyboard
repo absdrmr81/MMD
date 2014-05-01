@@ -202,14 +202,14 @@ Tell us a little about your dog.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose the breed for" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRg-cV-MhA">
-                                <rect key="frame" x="25" y="62" width="280" height="32"/>
+                                <rect key="frame" x="25" y="72" width="280" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                 <color key="textColor" red="0.2274509804" green="0.70980392160000005" blue="0.2901960784" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tcs-pV-gd5">
-                                <rect key="frame" x="0.0" y="131" width="320" height="162"/>
+                                <rect key="frame" x="0.0" y="144" width="320" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Nxv-99-G6m" id="B4x-zU-qF3"/>
@@ -217,14 +217,14 @@ Tell us a little about your dog.</string>
                                 </connections>
                             </pickerView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rh-pU-GZA">
-                                <rect key="frame" x="25" y="111" width="275" height="26"/>
+                                <rect key="frame" x="25" y="117" width="275" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                 <color key="textColor" red="0.54901963470000004" green="0.42352944609999998" blue="0.086274512110000007" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_onboard_dog" translatesAutoresizingMaskIntoConstraints="NO" id="00a-h2-itn">
-                                <rect key="frame" x="68" y="293" width="184" height="177"/>
+                                <rect key="frame" x="68" y="303" width="184" height="177"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -485,7 +485,7 @@ Tell us a little about your dog.</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_profile_pressed" translatesAutoresizingMaskIntoConstraints="NO" id="VW9-dG-eix">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_profile_crop" translatesAutoresizingMaskIntoConstraints="NO" id="VW9-dG-eix">
                                 <rect key="frame" x="108" y="85" width="105" height="106"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -581,6 +581,7 @@ Tell us a little about your dog.</string>
                     <navigationItem key="navigationItem" id="4Sf-M1-J1E">
                         <nil key="title"/>
                         <barButtonItem key="rightBarButtonItem" title="Log Out" id="mBI-Hf-5sk">
+                            <color key="tintColor" red="1" green="0.98823529409999999" blue="0.90196078430000004" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
                                 <action selector="logOut:" destination="RgK-nJ-bPb" id="OF8-Qb-JJs"/>
                             </connections>
@@ -801,9 +802,9 @@ Tell us a little about your dog.</string>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DGy-f9-45C">
-                                <rect key="frame" x="0.0" y="234" width="320" height="334"/>
+                                <rect key="frame" x="0.0" y="228" width="320" height="340"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.90196078430000004" alpha="1" colorSpace="deviceRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="myCell" textLabel="CYc-IA-cSa" detailTextLabel="AQE-HE-Sfi" rowHeight="72" style="IBUITableViewCellStyleSubtitle" id="tsg-2T-YCr">
                                         <rect key="frame" x="0.0" y="22" width="320" height="72"/>
@@ -813,21 +814,22 @@ Tell us a little about your dog.</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CYc-IA-cSa">
-                                                    <rect key="frame" x="15" y="17" width="34" height="22"/>
+                                                    <rect key="frame" x="15" y="17" width="32" height="22"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                                    <color key="textColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.25882352939999997" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="43" id="AQE-HE-Sfi">
-                                                    <rect key="frame" x="15" y="39" width="43" height="15"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="39" id="AQE-HE-Sfi">
+                                                    <rect key="frame" x="15" y="39" width="39" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                                                    <color key="textColor" red="0.2274509804" green="0.70980392160000005" blue="0.2901960784" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.90196078430000004" alpha="1" colorSpace="deviceRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -836,7 +838,7 @@ Tell us a little about your dog.</string>
                                 </connections>
                             </tableView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Bbx-u1-STV">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="232"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </mapView>
                         </subviews>
@@ -849,7 +851,7 @@ Tell us a little about your dog.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAi-DR-Lh4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="382" y="834"/>
+            <point key="canvasLocation" x="2006" y="1058"/>
         </scene>
         <!--Dog Park View Controller - Dog Parks-->
         <scene sceneID="2dp-xt-2d9">
@@ -864,9 +866,9 @@ Tell us a little about your dog.</string>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Dvr-mN-dNt">
-                                <rect key="frame" x="0.0" y="232" width="320" height="336"/>
+                                <rect key="frame" x="0.0" y="228" width="320" height="340"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.90196078430000004" alpha="1" colorSpace="deviceRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="myProtoCell" textLabel="hHl-D9-dUK" detailTextLabel="PvC-l1-U82" rowHeight="70" style="IBUITableViewCellStyleSubtitle" id="eVA-r5-czQ">
                                         <rect key="frame" x="0.0" y="22" width="320" height="70"/>
@@ -876,24 +878,22 @@ Tell us a little about your dog.</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hHl-D9-dUK">
-                                                    <rect key="frame" x="15" y="16" width="34" height="22"/>
+                                                    <rect key="frame" x="15" y="16" width="32" height="22"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                                    <color key="textColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.25882352939999997" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="43" id="PvC-l1-U82">
-                                                    <rect key="frame" x="15" y="38" width="43" height="15"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="39" id="PvC-l1-U82">
+                                                    <rect key="frame" x="15" y="38" width="39" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                                                    <color key="textColor" red="0.2274509804" green="0.70980392160000005" blue="0.2901960784" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="kBs-Df-6zd" kind="push" identifier="mySegue" id="Ubc-DH-dTl"/>
-                                        </connections>
+                                        <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.90196078430000004" alpha="1" colorSpace="deviceRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -902,7 +902,7 @@ Tell us a little about your dog.</string>
                                 </connections>
                             </tableView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZX0-5k-25j">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="229"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="v5B-Hj-Kxf" id="ktm-aN-AXf"/>
@@ -921,26 +921,7 @@ Tell us a little about your dog.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ev-dl-ok0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="932" y="988"/>
-        </scene>
-        <!--Park Detail Table View Controller-->
-        <scene sceneID="0ka-VR-S8I">
-            <objects>
-                <viewController id="kBs-Df-6zd" customClass="ParkDetailTableViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="tUn-CD-9pZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="jil-ef-sdi"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="z2p-dW-uzL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="rXX-c9-xRn"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dfj-Ba-qWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1534" y="766"/>
+            <point key="canvasLocation" x="1996" y="388"/>
         </scene>
         <!--Vertical Gallery View Controller-->
         <scene sceneID="syP-FH-gMK">
@@ -957,7 +938,7 @@ Tell us a little about your dog.</string>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8gg-KL-0oR">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="0.96078431369999995" blue="0.70588235290000001" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.90196078430000004" alpha="1" colorSpace="deviceRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vle-Ns-ZZt">
                                     <size key="itemSize" width="274" height="218"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -996,7 +977,7 @@ Tell us a little about your dog.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w8H-0Q-Np8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1028" y="188"/>
+            <point key="canvasLocation" x="972" y="1242"/>
         </scene>
         <!--Vet View Controller - Vets-->
         <scene sceneID="jta-QJ-n6T">
@@ -1011,9 +992,9 @@ Tell us a little about your dog.</string>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="VTZ-Wv-RJc">
-                                <rect key="frame" x="0.0" y="250" width="320" height="318"/>
+                                <rect key="frame" x="0.0" y="228" width="320" height="340"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.90196078430000004" alpha="1" colorSpace="deviceRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="myCellID" textLabel="1HA-pD-7v1" detailTextLabel="g4d-pX-IIH" rowHeight="66" style="IBUITableViewCellStyleSubtitle" id="agg-sl-ShA">
                                         <rect key="frame" x="0.0" y="22" width="320" height="66"/>
@@ -1023,24 +1004,22 @@ Tell us a little about your dog.</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1HA-pD-7v1">
-                                                    <rect key="frame" x="15" y="15" width="34" height="22"/>
+                                                    <rect key="frame" x="15" y="14" width="32" height="22"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                                    <color key="textColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.25882352939999997" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="41" id="g4d-pX-IIH">
-                                                    <rect key="frame" x="15" y="37" width="41" height="14"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="39" id="g4d-pX-IIH">
+                                                    <rect key="frame" x="15" y="36" width="39" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="12"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                                                    <color key="textColor" red="0.2274509804" green="0.70980392160000005" blue="0.2901960784" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="geg-uj-Kq9" kind="push" identifier="detailSegue" id="0p6-CB-GLZ"/>
-                                        </connections>
+                                        <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.90196078430000004" alpha="1" colorSpace="deviceRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -1049,7 +1028,7 @@ Tell us a little about your dog.</string>
                                 </connections>
                             </tableView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qBh-i9-FMM">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="242"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </mapView>
                         </subviews>
@@ -1067,35 +1046,6 @@ Tell us a little about your dog.</string>
             </objects>
             <point key="canvasLocation" x="1985" y="-304"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="80N-Lu-Gmd">
-            <objects>
-                <tableViewController id="geg-uj-Kq9" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5XP-4o-kvo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="S0d-D8-fjK">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S0d-D8-fjK" id="bgt-nO-UmV">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="geg-uj-Kq9" id="Awk-WT-tdV"/>
-                            <outlet property="delegate" destination="geg-uj-Kq9" id="yaG-0e-GCg"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="Akv-6z-TLP"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YaG-Wp-PLF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2562" y="-198"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="U8h-hh-eA6">
             <objects>
@@ -1104,6 +1054,7 @@ Tell us a little about your dog.</string>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eQr-Wz-y6s">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1119,10 +1070,10 @@ Tell us a little about your dog.</string>
         <image name="gall" width="64" height="64"/>
         <image name="ic_grooming_std" width="44" height="44"/>
         <image name="ic_parks_std" width="44" height="44"/>
-        <image name="ic_profile_pressed" width="44" height="44"/>
         <image name="ic_profile_std" width="44" height="44"/>
         <image name="ic_vet_std" width="44" height="44"/>
         <image name="img_onboard_dog" width="214" height="124"/>
+        <image name="img_profile_crop" width="120" height="120"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

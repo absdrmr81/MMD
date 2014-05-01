@@ -30,7 +30,8 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
 {
     [super viewDidLoad];
     
-    
+    self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:76/255.0f green:76/255.0f blue:66/255.0f alpha:1.0f];
+
     MKCoordinateSpan span;
     CLLocationCoordinate2D start;
     
