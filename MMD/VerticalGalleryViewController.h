@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyCollectionViewCell.h"
 
-@interface VerticalGalleryViewController : UIViewController
+@interface VerticalGalleryViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+
+@property (strong, nonatomic) NSMutableArray *dogPix;
 
 @end
