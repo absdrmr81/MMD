@@ -7,25 +7,21 @@
 //
 
 #import "DogParkViewController.h"
-#import <CoreLocation/CoreLocation.h>
-#import <MapKit/MapKit.h>
-#import <Parse/Parse.h>
 #import "SWRevealViewController.h"
 
 typedef void (^MyCompletion)(NSArray* objects, NSError* error);
 
 @interface DogParkViewController () <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate>
 {
-    NSArray *foundDogParks;
-    NSString *address;
-    MKMapView *mapView;
-    NSArray* tempUsers;
-   
+        MKMapView *mapView;
 }
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
-@property CLLocationManager *locationManager;
 @property (strong, nonatomic) PFGeoPoint *userLocation;
+@property (strong, nonatomic) NSArray *tempUsers;
+@property (strong, nonatomic) NSArray *foundDogParks;
+@property (strong, nonatomic) NSString *address;
+@property CLLocationManager *locationManager;
 
 @end
 
@@ -60,7 +56,7 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
     //Setting it to left-side of Navi bar
     self.navigationItem.leftBarButtonItem = flipButton;
 
-    //Implenting swipe action
+    //Implementing swipe gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     self.locationManager = [CLLocationManager new];
@@ -71,7 +67,7 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    //Automatically search for Dog Parks in area
+    //Automatically search for Dog Parks in area w/o button pressed
     [self.locationManager startUpdatingLocation];
 
 }
@@ -122,17 +118,19 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
             NSArray   *mapitems = response.mapItems;
             MKMapItem *mapitem  = mapitems.firstObject;
             
-            foundDogParks = mapitems;
+            _foundDogParks = mapitems;
             [self.myTableView reloadData];
             
             CLLocationCoordinate2D min, max;
             min = max = placemark.location.coordinate;
+            
             //Setting annotations
             for (MKMapItem *item in mapitems) {
                 MKPointAnnotation *pin = [MKPointAnnotation new];
                 pin.coordinate = item.placemark.location.coordinate;
                 pin.title = item.name;
                 [self.mapView addAnnotation:pin];
+                
                 //Setting a box perimeter for annotations
                 min.latitude = MIN(pin.coordinate.latitude, min.latitude);
                 max.latitude = MAX(pin.coordinate.latitude, min.latitude);
@@ -145,11 +143,8 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
             MKCoordinateRegion region = MKCoordinateRegionMake(placemark.location.coordinate, span);
             [self.mapView setRegion:region animated:YES];
             
-            
-            
-            
             NSLog(@"%@", mapitem);
-            NSLog(@"%@", address);
+            NSLog(@"%@", _address);
         }];
         
     }
@@ -174,7 +169,7 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
     [self getUserFromParse:^(NSArray *objects, NSError *error)
     {
         __weak DogParkViewController* dvc = self;
-        tempUsers = objects;
+        _tempUsers = objects;
         
     }];
     
@@ -201,23 +196,23 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    [self performSegueWithIdentifier:@"mySegue" sender:view];
+    [self performSegueWithIdentifier:@"showDogPark" sender:view];
 }
 
 
 #pragma mark -- TableView Logic
     
-
+//Dog Parks showing up in cells
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return foundDogParks.count;
+    return _foundDogParks.count;
 }
 
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myProtoCell"];
-    MKMapItem *parkLocations = foundDogParks[indexPath.row];
+    MKMapItem *parkLocations = _foundDogParks[indexPath.row];
     
     
     cell.textLabel.text = parkLocations.name;
@@ -226,9 +221,6 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
     //Showing Address in subtitle in TableView cell
     cell.detailTextLabel.text = [[parkLocations.placemark.addressDictionary objectForKey:@"FormattedAddressLines"]
                                                                             componentsJoinedByString:@"\n"];
-    
-    
-    
     return cell;
 }
 
