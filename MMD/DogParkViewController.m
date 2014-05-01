@@ -12,11 +12,14 @@
 #import <Parse/Parse.h>
 #import "SWRevealViewController.h"
 
+typedef void (^MyCompletion)(NSArray* objects, NSError* error);
+
 @interface DogParkViewController () <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate>
 {
     NSArray *foundDogParks;
     NSString *address;
     MKMapView *mapView;
+    NSArray* tempUsers;
    
 }
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
@@ -32,9 +35,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
-    
     
     
     MKCoordinateSpan span;
@@ -65,8 +65,10 @@
     
     self.locationManager = [CLLocationManager new];
     self.locationManager.delegate = self;
+    
+    [self getUsersFromParse];
 }
-
+    
 #pragma mark -- Location Logic
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
@@ -160,6 +162,36 @@
 }
 
 
+-(void)getUsersFromParse
+{
+    [self getUserFromParse:^(NSArray *objects, NSError *error)
+    {
+        __weak DogParkViewController* dvc = self;
+        tempUsers = objects;
+        
+    }];
+    
+}
+
+
+
+-(void)getUserFromParse:(MyCompletion)completion
+{
+    
+    //create a query for user in Parse
+    PFQuery *query = [PFUser query];
+    
+    [query whereKey:@"objectId" notEqualTo:[[PFUser currentUser]objectId ]]; //do not get the current user
+    [query includeKey:@"location"];
+    
+    //execute the query
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        completion(objects,error);
+    }];
+    
+}
+
+
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     [self performSegueWithIdentifier:@"mySegue" sender:view];
@@ -185,30 +217,14 @@
     cell.detailTextLabel.text = parkLocations.name;
     
     //Showing Address in subtitle in TableView cell
-    cell.detailTextLabel.text = [[parkLocations.placemark.addressDictionary objectForKey:@"FormattedAddressLines"] componentsJoinedByString:@"\n"];
+    cell.detailTextLabel.text = [[parkLocations.placemark.addressDictionary objectForKey:@"FormattedAddressLines"]
+                                                                            componentsJoinedByString:@"\n"];
+    
+    
+    
     return cell;
 }
 
-
-
-- (PFQuery *)queryForTable
-{
-    if (!self.userLocation) {
-        return nil;
-    }
-
-    PFGeoPoint *userGeoPoint = self.userLocation;
-
-    PFQuery *query = [PFQuery queryWithClassName:@"MainInfo"];
-
-    [query whereKey:@"geoPoint" nearGeoPoint:userGeoPoint];
-
-    query.limit = 10;
-
-//    _placesObjects = [query findObjects];
-
-    return query;
-}
 - (IBAction)searchParks:(id)sender
 {
     [self.locationManager startUpdatingLocation];

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface VetViewController : UIViewController
-
+@property (strong, nonatomic) NSDictionary* vetDict;
 @end
