@@ -9,7 +9,7 @@
 #import "VetViewController.h"
 #import "SWRevealViewController.h"
 
-@interface VetViewController () <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, MKAnnotation, MKMapViewDelegate>
+@interface VetViewController () <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate>
 {
     NSArray *foundVetLocations;
     NSString *address;
@@ -30,6 +30,11 @@
 {
     
     [super viewDidLoad];//move the map to our location
+    
+    self.view.backgroundColor = [UIColor colorWithRed:255/255.0f green:252/255.0f blue:230/255.0f alpha:1.0f];
+    self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:76/255.0f green:76/255.0f blue:66/255.0f alpha:1.0f];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:255/255.0f green:252/255.0f blue:230/255.0f alpha:1.0f]}];
+
     
     MKCoordinateSpan span;
     CLLocationCoordinate2D start;
@@ -193,25 +198,19 @@
 }
 
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    
-}
-
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
-{
-    if (annotation == self.mapView.userLocation)
-    {
-        return nil;
-    }
-    MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
-//    pin.image = [UIImage imageNamed:@"ic_parks_pressed"];
-    pin.canShowCallout = YES;
-    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    
-    return pin;
-}
+//- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+//{
+//    if (annotation == self.mapView.userLocation)
+//    {
+//        return nil;
+//    }
+//    MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
+////    pin.image = [UIImage imageNamed:@"ic_parks_pressed"];
+//    pin.canShowCallout = YES;
+//    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+//    
+//    return pin;
+//}
 
 
 //-(MKAnnotationView *) mapView:(MKMapView *)mapMKMapView viewForAnnotation: (id<MKAnnotation>)annotation

@@ -30,7 +30,9 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
 {
     [super viewDidLoad];
     
-    
+    self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:76/255.0f green:76/255.0f blue:66/255.0f alpha:1.0f];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:255/255.0f green:252/255.0f blue:230/255.0f alpha:1.0f]}];
+
     MKCoordinateSpan span;
     CLLocationCoordinate2D start;
     
@@ -180,7 +182,7 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
 {
     [self getUserFromParse:^(NSArray *objects, NSError *error)
     {
-        __weak DogParkViewController* dvc = self;
+//        __weak DogParkViewController* dvc = self;
         _tempUsers = objects;
         
     }];
@@ -195,7 +197,10 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
     //create a query for user in Parse
     PFQuery *query = [PFUser query];
     
-    [query whereKey:@"objectId" notEqualTo:[[PFUser currentUser]objectId ]]; //do not get the current user
+    NSLog(@"current user = %@", [PFUser currentUser]);
+    NSLog(@"objectid  = %@", [[PFUser currentUser] objectId]);
+    
+    [query whereKey:@"objectId" notEqualTo:[[PFUser currentUser] objectId]]; //do not get the current user
     [query includeKey:@"location"];
     
     //execute the query

@@ -8,7 +8,7 @@
 
 #import "SidebarViewController.h"
 #import "SWRevealViewController.h"
-#import "PhotoViewController.h"
+#import "GroomingViewController.h"
 #import "BreedViewController.h"
 
 @interface SidebarViewController ()
@@ -30,7 +30,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:76/255.0f green:76/255.0f blue:66/255.0f alpha:1.0f];
+  
     self.view.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
     self.tableView.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
 //    self.tableView.separatorColor = [UIColor colorWithWhite:0.15f alpha:0.2f];
