@@ -87,7 +87,6 @@
     }
     self.profilePicImageView.clipsToBounds = YES;
     
-    [self.currentUser save];
 }
 
 - (IBAction)profilePicButtonPressed:(id)sender
