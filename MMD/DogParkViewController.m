@@ -124,8 +124,8 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
             for (MKMapItem *item in mapitems) {
                 MKPointAnnotation *pin = [MKPointAnnotation new];
                 pin.coordinate = item.placemark.location.coordinate;
+                pin.title = item.name;
                 [self.mapView addAnnotation:pin];
-
                 //Setting a box perimeter for annotations
                 min.latitude = MIN(pin.coordinate.latitude, min.latitude);
                 max.latitude = MAX(pin.coordinate.latitude, min.latitude);
