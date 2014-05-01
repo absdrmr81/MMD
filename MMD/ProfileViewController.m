@@ -20,6 +20,10 @@
 @property (strong, nonatomic) IBOutlet UIImageView *profilePicImageView;
 @property (strong, nonatomic) IBOutlet UIButton *profilePicButton;
 @property (strong, nonatomic) IBOutlet UIButton *cameraRollButton;
+@property (strong, nonatomic) UIImagePickerController *picker1;
+@property (strong, nonatomic) UIImagePickerController *picker2;
+
+
 
 @end
 
@@ -91,29 +95,29 @@
 
 - (IBAction)profilePicButtonPressed:(id)sender
 {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-	picker.delegate = self;
-    [picker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    self.picker1 = [[UIImagePickerController new] init];
+	self.picker1.delegate = self;
+    [self.picker1 setSourceType:UIImagePickerControllerSourceTypeCamera];
 //    
 //	if((UIButton *) sender == self.profilePicButton)
 //    {
 //        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
 //	}
-    [self presentViewController:picker animated:YES completion:nil];
+    [self presentViewController:self.picker1 animated:YES completion:nil];
     
 }
 
 - (IBAction)cameraRollButtonPressed:(id)sender
 {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-	picker.delegate = self;
-    [picker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    self.picker2 = [[UIImagePickerController alloc] init];
+	self.picker2.delegate = self;
+    [self.picker2 setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
 //    
 //	if((UIButton *) sender == self.profilePicButton)
 //    {
 //        picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
 //	}
-    [self presentViewController:picker animated:YES completion:nil];
+    [self presentViewController:self.picker2 animated:YES completion:nil];
 }
 
 
