@@ -221,6 +221,8 @@
 				26223BD9190C69760005BD26 /* VetViewController.m */,
 				935777A4190828C0004D8AAC /* MapViewController.h */,
 				935777A5190828C0004D8AAC /* MapViewController.m */,
+				93D233141911E8BA00E432D8 /* GalleryViewController.h */,
+				93D233151911E8BA00E432D8 /* GalleryViewController.m */,
 				935777A1190827AC004D8AAC /* PhotoViewController.h */,
 				935777A2190827AC004D8AAC /* PhotoViewController.m */,
 				937BC617190C5B940055AFA0 /* CameraTableViewController.h */,
