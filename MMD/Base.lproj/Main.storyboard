@@ -1001,10 +1001,10 @@ Tell us a little about your dog.</string>
             </objects>
             <point key="canvasLocation" x="1457" y="-8"/>
         </scene>
-        <!--Gallery View Controller-->
+        <!--Galleria View Controller-->
         <scene sceneID="alE-vv-3sx">
             <objects>
-                <viewController id="cSq-K5-5Op" customClass="GalleryViewController" sceneMemberID="viewController">
+                <viewController id="cSq-K5-5Op" customClass="GalleriaViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ddv-Sf-wd9"/>
                         <viewControllerLayoutGuide type="bottom" id="F0U-Pj-tBS"/>
@@ -1017,14 +1017,10 @@ Tell us a little about your dog.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="442"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera-xxl" translatesAutoresizingMaskIntoConstraints="NO" id="rZd-sb-eb3">
-                                <rect key="frame" x="110" y="455" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meo-bO-hmZ">
-                                <rect key="frame" x="110" y="477" width="98" height="64"/>
+                                <rect key="frame" x="111" y="471" width="98" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Take Photo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1093,7 +1089,6 @@ Tell us a little about your dog.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="camera-xxl" width="256" height="256"/>
         <image name="gall" width="64" height="64"/>
         <image name="ic_grooming_std" width="44" height="44"/>
         <image name="ic_parks_std" width="44" height="44"/>
