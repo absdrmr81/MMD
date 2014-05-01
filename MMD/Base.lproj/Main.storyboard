@@ -1001,10 +1001,10 @@ Tell us a little about your dog.</string>
             </objects>
             <point key="canvasLocation" x="1457" y="-8"/>
         </scene>
-        <!--Gallery View Controller-->
+        <!--Galleria View Controller-->
         <scene sceneID="alE-vv-3sx">
             <objects>
-                <viewController id="cSq-K5-5Op" customClass="GalleryViewController" sceneMemberID="viewController">
+                <viewController id="cSq-K5-5Op" customClass="GalleriaViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ddv-Sf-wd9"/>
                         <viewControllerLayoutGuide type="bottom" id="F0U-Pj-tBS"/>
