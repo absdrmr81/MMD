@@ -22,7 +22,7 @@
 		26182F8518FC865E00D5DB61 /* MMDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26182F8418FC865E00D5DB61 /* MMDTests.m */; };
 		26223BD3190AF9040005BD26 /* DogParkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26223BD2190AF9040005BD26 /* DogParkViewController.m */; };
 		26223BDA190C69760005BD26 /* VetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26223BD9190C69760005BD26 /* VetViewController.m */; };
-		930FBA4A19121C04008FB30B /* GalleriaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 930FBA4919121C04008FB30B /* GalleriaViewController.m */; };
+		268EC9771912247C00B0BD4E /* GalleriaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 268EC9751912247C00B0BD4E /* GalleriaViewController.m */; };
 		9318672A1900663700C9C48A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 931867291900663700C9C48A /* MapKit.framework */; };
 		9346806D18FECC1600B351AD /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9346806C18FECC1600B351AD /* SignUpViewController.m */; };
 		9346807018FECC6100B351AD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9346806F18FECC6100B351AD /* LoginViewController.m */; };
@@ -81,8 +81,8 @@
 		26223BD2190AF9040005BD26 /* DogParkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogParkViewController.m; sourceTree = "<group>"; };
 		26223BD8190C69760005BD26 /* VetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VetViewController.h; sourceTree = "<group>"; };
 		26223BD9190C69760005BD26 /* VetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VetViewController.m; sourceTree = "<group>"; };
-		930FBA4819121C04008FB30B /* GalleriaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GalleriaViewController.h; path = ../../../../Drmrboy/MobileMakersDir/MMD/MMD/GalleriaViewController.h; sourceTree = "<group>"; };
-		930FBA4919121C04008FB30B /* GalleriaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GalleriaViewController.m; path = ../../../../Drmrboy/MobileMakersDir/MMD/MMD/GalleriaViewController.m; sourceTree = "<group>"; };
+		268EC9751912247C00B0BD4E /* GalleriaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GalleriaViewController.m; sourceTree = "<group>"; };
+		268EC9761912247C00B0BD4E /* GalleriaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GalleriaViewController.h; sourceTree = "<group>"; };
 		931867291900663700C9C48A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9346806B18FECC1600B351AD /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		9346806C18FECC1600B351AD /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
@@ -160,6 +160,8 @@
 		26182F4D18FC865E00D5DB61 = {
 			isa = PBXGroup;
 			children = (
+				268EC9751912247C00B0BD4E /* GalleriaViewController.m */,
+				268EC9761912247C00B0BD4E /* GalleriaViewController.h */,
 				26182F5F18FC865E00D5DB61 /* MMD */,
 				26182F7E18FC865E00D5DB61 /* MMDTests */,
 				26182F5818FC865E00D5DB61 /* Frameworks */,
@@ -212,8 +214,6 @@
 				935777A5190828C0004D8AAC /* MapViewController.m */,
 				935777A1190827AC004D8AAC /* PhotoViewController.h */,
 				935777A2190827AC004D8AAC /* PhotoViewController.m */,
-				930FBA4819121C04008FB30B /* GalleriaViewController.h */,
-				930FBA4919121C04008FB30B /* GalleriaViewController.m */,
 				937BC617190C5B940055AFA0 /* CameraTableViewController.h */,
 				937BC618190C5B940055AFA0 /* CameraTableViewController.m */,
 				9357779619082094004D8AAC /* SidebarViewController.h */,
@@ -399,7 +399,7 @@
 				93EB068E18FEED6800562371 /* ConfirmationViewController.m in Sources */,
 				935777A6190828C0004D8AAC /* MapViewController.m in Sources */,
 				9357779519081FF9004D8AAC /* SWRevealViewController.m in Sources */,
-				930FBA4A19121C04008FB30B /* GalleriaViewController.m in Sources */,
+				268EC9771912247C00B0BD4E /* GalleriaViewController.m in Sources */,
 				26223BDA190C69760005BD26 /* VetViewController.m in Sources */,
 				935777A3190827AC004D8AAC /* PhotoViewController.m in Sources */,
 			);

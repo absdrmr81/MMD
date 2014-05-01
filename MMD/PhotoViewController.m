@@ -8,30 +8,195 @@
 
 #import "PhotoViewController.h"
 #import "SWRevealViewController.h"
+#import <MapKit/MapKit.h>
 
 
-@interface PhotoViewController ()
+@interface PhotoViewController () <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate>
+{
+    NSArray *foundGroomer;
+    NSString *address;
+}
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) IBOutlet UITableView *myTableView;
+
+@property CLLocationManager *locationManager;
+
 
 @end
-
 @implementation PhotoViewController
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     
+    MKCoordinateSpan span;
+    CLLocationCoordinate2D start;
+    
+    //create region
+    MKCoordinateRegion region;
+    region.span = span;
+    region.center = start;
+    
+    [self.mapView setRegion:region animated:YES];
+    self.mapView.showsUserLocation = YES;
+    
+    [self.mapView setUserInteractionEnabled:YES];
+    [self.mapView setUserTrackingMode:MKUserTrackingModeFollow];
+    
+    
+    
+    [CLLocationManager locationServicesEnabled];
+    
     //Add UIBarButton button to Navigation bar programatically
     UIBarButtonItem *flipButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_nav_std"] style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
     //Setting it to left-side of Navi bar
     self.navigationItem.leftBarButtonItem = flipButton;
-
-    //This is a new comment
-    // Add pan gesture to hide the sidebar
-    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-
     
-//    self.photoImageView.image = [UIImage imageNamed:self.photoFilename];
+    //Implenting swipe action
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    self.locationManager = [CLLocationManager new];
+    self.locationManager.delegate = self;
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    //Automatically search for Dog Parks in area
+    [self.locationManager startUpdatingLocation];
+    
+}
+
+#pragma mark -- Location Logic
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"%@", error);
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    for (CLLocation *location in locations)
+    {
+        if (location.verticalAccuracy <5000 && location.horizontalAccuracy < 5000)
+        {
+            
+            [self startReverseGeocode:location];
+            [self.locationManager stopUpdatingLocation];
+            break;
+            
+            
+        }
+    }
+}
+
+- (void)startReverseGeocode: (CLLocation*)location
+{
+    CLGeocoder *geocoder = [CLGeocoder new];
+    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+        [self foundGroomer:placemarks.firstObject];
+        
+        NSLog(@"%@", placemarks);
+    }];
+}
+
+
+- (void)foundGroomer: (CLPlacemark *)placemark
+{
+    MKLocalSearchRequest *request = [MKLocalSearchRequest new];
+    request.naturalLanguageQuery = @"groomers";
+    request.region = MKCoordinateRegionMake(placemark.location.coordinate, MKCoordinateSpanMake(.7, .8));
+    
+    MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
+    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
+        
+        NSArray   *mapitems = response.mapItems;
+        MKMapItem *mapitem  = mapitems.firstObject;
+        
+        foundGroomer = mapitems;
+        [self.myTableView reloadData];
+        
+        CLLocationCoordinate2D min, max;
+        min = max = placemark.location.coordinate;
+        //Setting annotations
+        for (MKMapItem *item in mapitems) {
+            MKPointAnnotation *pin = [MKPointAnnotation new];
+            pin.coordinate = item.placemark.location.coordinate;
+            pin.title = item.name;
+            [self.mapView addAnnotation:pin];
+            //Setting a box perimeter for annotations
+            min.latitude = MIN(pin.coordinate.latitude, min.latitude);
+            max.latitude = MAX(pin.coordinate.latitude, min.latitude);
+            min.longitude = MIN(pin.coordinate.longitude, min.longitude);
+            max.longitude = MAX(pin.coordinate.longitude, min.longitude);
+            
+        }
+        
+        MKCoordinateSpan span = MKCoordinateSpanMake(max.latitude - min.latitude, max.longitude - min.longitude);
+        MKCoordinateRegion region = MKCoordinateRegionMake(placemark.location.coordinate, span);
+        [self.mapView setRegion:region animated:YES];
+        
+        
+        
+        
+        NSLog(@"%@", mapitem);
+        NSLog(@"%@", address);
+    }];
+    
+}
+
+- (void)showAnnotations:(NSArray *)annotations animated:(BOOL)animated
+{
+    
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    if (annotation == self.mapView.userLocation)
+    {
+        return nil;
+    }
+    MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
+    pin.image = [UIImage imageNamed:@"ic_grooming_pressed"];
+    pin.canShowCallout = YES;
+    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    
+    return pin;
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    [self performSegueWithIdentifier:@"mySegue" sender:view];
+}
+
+
+#pragma mark -- TableView Logic
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return foundGroomer.count;
+}
+
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell"];
+    MKMapItem *parkLocations = foundGroomer[indexPath.row];
+    
+    
+    cell.textLabel.text = parkLocations.name;
+    cell.detailTextLabel.text = parkLocations.name;
+    
+    //Showing Address in subtitle in TableView cell
+    cell.detailTextLabel.text = [[parkLocations.placemark.addressDictionary objectForKey:@"FormattedAddressLines"]
+                                 componentsJoinedByString:@"\n"];
+    
+    
+    
+    return cell;
 }
 
 

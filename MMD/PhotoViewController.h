@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PhotoViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UIImageView *photoImageView;
+
 
 @end
