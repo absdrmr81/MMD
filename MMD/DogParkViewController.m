@@ -22,6 +22,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property CLLocationManager *locationManager;
+@property (strong, nonatomic) PFGeoPoint *userLocation;
 
 @end
 
@@ -31,6 +32,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    
     
     
     MKCoordinateSpan span;
@@ -187,24 +191,24 @@
 
 
 
-//- (PFQuery *)queryForTable
-//{
-//    if (!self.userLocation) {
-//        return nil;
-//    }
-//
-//    PFGeoPoint *userGeoPoint = self.userLocation;
-//
-//    PFQuery *query = [PFQuery queryWithClassName:@"MainInfo"];
-//
-//    [query whereKey:@"geoPoint" nearGeoPoint:userGeoPoint];
-//
-//    query.limit = 10;
-//
-////    _placesObjects = [query findObjects];
-//
-//    return query;
-//}
+- (PFQuery *)queryForTable
+{
+    if (!self.userLocation) {
+        return nil;
+    }
+
+    PFGeoPoint *userGeoPoint = self.userLocation;
+
+    PFQuery *query = [PFQuery queryWithClassName:@"MainInfo"];
+
+    [query whereKey:@"geoPoint" nearGeoPoint:userGeoPoint];
+
+    query.limit = 10;
+
+//    _placesObjects = [query findObjects];
+
+    return query;
+}
 - (IBAction)searchParks:(id)sender
 {
     [self.locationManager startUpdatingLocation];
