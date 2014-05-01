@@ -130,6 +130,7 @@
             [self.mapView addAnnotation:pin];
             
             
+            
             //Setting a box perimeter for annotations
             min.latitude = MIN(pin.coordinate.latitude, min.latitude);
             max.latitude = MAX(pin.coordinate.latitude, min.latitude);
@@ -148,6 +149,7 @@
     }];
     
 }
+
 
 #pragma mark -- TableView Logic
 
@@ -170,6 +172,11 @@
     return cell;
 }
 
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    
+}
 
 
 

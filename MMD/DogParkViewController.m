@@ -143,12 +143,18 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
                 MKCoordinateSpan span = MKCoordinateSpanMake(max.latitude - min.latitude, max.longitude - min.longitude);
                 MKCoordinateRegion region = MKCoordinateRegionMake(placemark.location.coordinate, span);
                 [self.mapView setRegion:region animated:YES];
-                
+                [self.mapView setScrollEnabled:YES];
+            
                 NSLog(@"%@", mapitem);
                 NSLog(@"%@", _address);
         }];
         
     }
+
+- (void)selectAnnotation:(id < MKAnnotation >)annotation animated:(BOOL)animated
+{
+    
+}
 
 //- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 //{
