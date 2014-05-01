@@ -52,6 +52,7 @@
 		9386DB2818FE0E1A0077D942 /* GreetingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9386DB2718FE0E1A0077D942 /* GreetingsViewController.m */; };
 		9386DB2E18FE0E6D0077D942 /* BreedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9386DB2D18FE0E6D0077D942 /* BreedViewController.m */; };
 		9386DB3418FE0F430077D942 /* CalculateAgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9386DB3318FE0F430077D942 /* CalculateAgeViewController.m */; };
+		93D233161911E8BA00E432D8 /* GalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D233151911E8BA00E432D8 /* GalleryViewController.m */; };
 		93EB068E18FEED6800562371 /* ConfirmationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EB068D18FEED6800562371 /* ConfirmationViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +130,8 @@
 		9386DB2D18FE0E6D0077D942 /* BreedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BreedViewController.m; sourceTree = "<group>"; };
 		9386DB3218FE0F430077D942 /* CalculateAgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculateAgeViewController.h; sourceTree = "<group>"; };
 		9386DB3318FE0F430077D942 /* CalculateAgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculateAgeViewController.m; sourceTree = "<group>"; };
+		93D233141911E8BA00E432D8 /* GalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GalleryViewController.h; path = ../../../../Drmrboy/MobileMakersDir/MMD/MMD/GalleryViewController.h; sourceTree = "<group>"; };
+		93D233151911E8BA00E432D8 /* GalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GalleryViewController.m; path = ../../../../Drmrboy/MobileMakersDir/MMD/MMD/GalleryViewController.m; sourceTree = "<group>"; };
 		93EB068C18FEED6800562371 /* ConfirmationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmationViewController.h; sourceTree = "<group>"; };
 		93EB068D18FEED6800562371 /* ConfirmationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -222,6 +225,8 @@
 				935777A4190828C0004D8AAC /* MapViewController.h */,
 				935777A5190828C0004D8AAC /* MapViewController.m */,
 				935777A1190827AC004D8AAC /* PhotoViewController.h */,
+				93D233141911E8BA00E432D8 /* GalleryViewController.h */,
+				93D233151911E8BA00E432D8 /* GalleryViewController.m */,
 				935777A2190827AC004D8AAC /* PhotoViewController.m */,
 				937BC617190C5B940055AFA0 /* CameraTableViewController.h */,
 				937BC618190C5B940055AFA0 /* CameraTableViewController.m */,
@@ -421,10 +426,10 @@
 				9346806D18FECC1600B351AD /* SignUpViewController.m in Sources */,
 				93EB068E18FEED6800562371 /* ConfirmationViewController.m in Sources */,
 				935777A6190828C0004D8AAC /* MapViewController.m in Sources */,
-				93D2331319117CF800E432D8 /* ParkDetailViewController.m in Sources */,
 				9357779519081FF9004D8AAC /* SWRevealViewController.m in Sources */,
 				26223BDA190C69760005BD26 /* VetViewController.m in Sources */,
 				935777A3190827AC004D8AAC /* PhotoViewController.m in Sources */,
+				93D233161911E8BA00E432D8 /* GalleryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
