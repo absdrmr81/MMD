@@ -11,22 +11,17 @@
 #import "MapKit/MapKit.h"
 #import "CoreLocation/CoreLocation.h"
 #import "BreedViewController.h"
-#import <Parse/Parse.h>
-
-
-
 
 
 @interface MapViewController () <CLLocationManagerDelegate, MKMapViewDelegate>
-{
-    CLLocationManager *localManager;
-    CLLocation *currentLocation;
-    NSArray *Name;
-}
+
 @property MKPointAnnotation *currentPlaceAnnotation;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) NSMutableArray *title;
 @property (strong, nonatomic) PFGeoPoint *userLocation;
+@property (strong, nonatomic) NSArray *Name;
+@property (strong, nonatomic) CLLocation *currentLocation;
+@property (strong, nonatomic) CLLocationManager *localManager;
 
 
 
@@ -114,7 +109,7 @@
             PFQuery *User = [PFUser query];
             [User selectKeys:@[@"username"]];
             [User findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
-                Name = results;
+                _Name = results;
             }];
         }
     }];
@@ -132,44 +127,24 @@
     [self CurrentLocationIdentifier];
 }
 
-//- (PFQuery *)queryForTable
-//{
-//    if (!self.userLocation) {
-//        return nil;
-//    }
-//    
-//    PFGeoPoint *userGeoPoint = self.userLocation;
-//    
-//    PFQuery *query = [PFQuery queryWithClassName:@"MainInfo"];
-//    
-//    [query whereKey:@"geoPoint" nearGeoPoint:userGeoPoint];
-//    
-//    query.limit = 10;
-//    
-////    _placesObjects = [query findObjects];
-//    
-//    return query;
-//}
-
-
 //Current Location Address
 - (void) CurrentLocationIdentifier
 {
     //Getting current GPS location
-    localManager = [CLLocationManager new];
-    localManager.delegate = self;
-    localManager.distanceFilter = kCLDistanceFilterNone;
-    localManager.desiredAccuracy = kCLLocationAccuracyBest;
-    [localManager startUpdatingLocation];
+    _localManager = [CLLocationManager new];
+    _localManager.delegate = self;
+    _localManager.distanceFilter = kCLDistanceFilterNone;
+    _localManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [_localManager startUpdatingLocation];
 }
 
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    currentLocation = [locations objectAtIndex:0];
-    [localManager stopUpdatingLocation];
+    _currentLocation = [locations objectAtIndex:0];
+    [_localManager stopUpdatingLocation];
     CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
-    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error)
+    [geocoder reverseGeocodeLocation:_currentLocation completionHandler:^(NSArray *placemarks, NSError *error)
      {
          if (!(error))
          {

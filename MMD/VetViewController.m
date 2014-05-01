@@ -7,8 +7,6 @@
 //
 
 #import "VetViewController.h"
-#import <CoreLocation/CoreLocation.h>
-#import <MapKit/MapKit.h>
 #import "SWRevealViewController.h"
 
 @interface VetViewController () <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, MKAnnotation, MKMapViewDelegate>

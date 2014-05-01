@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Mapkit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface VetViewController : UIViewController
 @property (strong, nonatomic) NSDictionary* vetDict;

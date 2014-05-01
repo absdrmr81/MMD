@@ -43,6 +43,7 @@
     region.span = span;
     region.center = start;
     
+    //Pulsing blue locator dot
     [self.mapView setRegion:region animated:YES];
     self.mapView.showsUserLocation = YES;
     
@@ -68,7 +69,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    //Automatically search for Dog Parks in area
+    //Automatically search for Groomers in area
     [self.locationManager startUpdatingLocation];
     
 }
