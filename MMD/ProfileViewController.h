@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProfileViewController : UIViewController
+@interface ProfileViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
 
 @property (strong, nonatomic) IBOutlet UILabel *dogNameLabel;
 @property (strong, nonatomic) NSString *dogNameString;

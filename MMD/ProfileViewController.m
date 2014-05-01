@@ -15,11 +15,11 @@
 #import <QuartzCore/QuartzCore.h>
 
 
-@interface ProfileViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-
+@interface ProfileViewController () 
 @property (strong, nonatomic) PFUser *currentUser;
 @property (strong, nonatomic) IBOutlet UIImageView *profilePicImageView;
 @property (strong, nonatomic) IBOutlet UIButton *profilePicButton;
+@property (strong, nonatomic) IBOutlet UIButton *cameraRollButton;
 
 @end
 
@@ -93,18 +93,28 @@
 {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
 	picker.delegate = self;
-    
-	if((UIButton *) sender == self.profilePicButton)
-    {
-        picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-	}
-    else
-    {
-        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-	}
+    [picker setSourceType:UIImagePickerControllerSourceTypeCamera];
+//    
+//	if((UIButton *) sender == self.profilePicButton)
+//    {
+//        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+//	}
     [self presentViewController:picker animated:YES completion:nil];
+    
 }
 
+- (IBAction)cameraRollButtonPressed:(id)sender
+{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+	picker.delegate = self;
+    [picker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+//    
+//	if((UIButton *) sender == self.profilePicButton)
+//    {
+//        picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+//	}
+    [self presentViewController:picker animated:YES completion:nil];
+}
 
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
