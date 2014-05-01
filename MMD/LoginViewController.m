@@ -24,7 +24,7 @@
     self.navigationItem.hidesBackButton = YES;
     self.view.backgroundColor = [UIColor colorWithRed:255/255.0f green:252/255.0f blue:230/255.0f alpha:1.0f];
     self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:76/255.0f green:76/255.0f blue:66/255.0f alpha:1.0f];
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:255/255.0f green:245/255.0f blue:180/255.0f alpha:1.0f];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:255/255.0f green:252/255.0f blue:230/255.0f alpha:1.0f]}];
 
 
     self.title = @"Log In";
