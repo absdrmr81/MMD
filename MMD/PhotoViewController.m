@@ -21,12 +21,10 @@
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property (strong, nonatomic) PFGeoPoint *userLocation;
-
-
 @property CLLocationManager *locationManager;
 
-
 @end
+
 @implementation PhotoViewController
 
 
@@ -115,7 +113,8 @@
     request.region = MKCoordinateRegionMake(placemark.location.coordinate, MKCoordinateSpanMake(.7, .8));
     
     MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
-    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
+    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error)
+    {
         
         NSArray   *mapitems = response.mapItems;
         MKMapItem *mapitem  = mapitems.firstObject;
@@ -125,12 +124,15 @@
         
         CLLocationCoordinate2D min, max;
         min = max = placemark.location.coordinate;
+        
         //Setting annotations
-        for (MKMapItem *item in mapitems) {
+        for (MKMapItem *item in mapitems)
+        {
             MKPointAnnotation *pin = [MKPointAnnotation new];
             pin.coordinate = item.placemark.location.coordinate;
             pin.title = item.name;
             [self.mapView addAnnotation:pin];
+            
             //Setting a box perimeter for annotations
             min.latitude = MIN(pin.coordinate.latitude, min.latitude);
             max.latitude = MAX(pin.coordinate.latitude, min.latitude);
@@ -138,23 +140,19 @@
             max.longitude = MAX(pin.coordinate.longitude, min.longitude);
             
         }
+            MKCoordinateSpan span = MKCoordinateSpanMake(max.latitude - min.latitude, max.longitude - min.longitude);
+            MKCoordinateRegion region = MKCoordinateRegionMake(placemark.location.coordinate, span);
+            [self.mapView setRegion:region animated:YES];
         
-        MKCoordinateSpan span = MKCoordinateSpanMake(max.latitude - min.latitude, max.longitude - min.longitude);
-        MKCoordinateRegion region = MKCoordinateRegionMake(placemark.location.coordinate, span);
-        [self.mapView setRegion:region animated:YES];
-        
-        
-        
-        
-        NSLog(@"%@", mapitem);
-        NSLog(@"%@", address);
+            NSLog(@"%@", mapitem);
+            NSLog(@"%@", address);
     }];
     
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    if (annotation == self.mapView.userLocation)
+    if (annotation == mapView.userLocation)
     {
         return nil;
     }
@@ -170,6 +168,25 @@
 {
     [self performSegueWithIdentifier:@"showGroomers" sender:view];
 }
+
+//- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+//{
+//    if (annotation == self.mapView.userLocation)
+//    {
+//        return nil;
+//    }
+//    MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
+//    pin.image = [UIImage imageNamed:@"ic_grooming_pressed"];
+//    pin.canShowCallout = YES;
+//    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+//    
+//    return pin;
+//}
+//
+//- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+//{
+//    [self performSegueWithIdentifier:@"showGroomers" sender:view];
+//}
 
 
 #pragma mark -- TableView Logic
@@ -193,8 +210,6 @@
     //Showing Address in subtitle in TableView cell
     cell.detailTextLabel.text = [[parkLocations.placemark.addressDictionary objectForKey:@"FormattedAddressLines"]
                                  componentsJoinedByString:@"\n"];
-    
-    
     
     return cell;
 }

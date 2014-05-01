@@ -13,9 +13,7 @@
 {
     NSArray *foundVetLocations;
     NSString *address;
-    CLLocation *locationManager;
     CLLocationCoordinate2D coordinate;
-    MKMapView *mapView;
     
 }
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;

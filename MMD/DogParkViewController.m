@@ -12,9 +12,7 @@
 typedef void (^MyCompletion)(NSArray* objects, NSError* error);
 
 @interface DogParkViewController () <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate>
-{
-        MKMapView *mapView;
-}
+
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) PFGeoPoint *userLocation;
@@ -41,6 +39,7 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
     region.span = span;
     region.center = start;
     
+    //Pulsing blue locator dot
     [self.mapView setRegion:region animated:YES];
     self.mapView.showsUserLocation = YES;
     
@@ -113,7 +112,8 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
         request.region = MKCoordinateRegionMake(placemark.location.coordinate, MKCoordinateSpanMake(5, 5));
         
         MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
-        [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
+        [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error)
+        {
             
             NSArray   *mapitems = response.mapItems;
             MKMapItem *mapitem  = mapitems.firstObject;
@@ -125,7 +125,8 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
             min = max = placemark.location.coordinate;
             
             //Setting annotations
-            for (MKMapItem *item in mapitems) {
+            for (MKMapItem *item in mapitems)
+            {
                 MKPointAnnotation *pin = [MKPointAnnotation new];
                 pin.coordinate = item.placemark.location.coordinate;
                 pin.title = item.name;
@@ -139,29 +140,34 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
                 
             }
             
-            MKCoordinateSpan span = MKCoordinateSpanMake(max.latitude - min.latitude, max.longitude - min.longitude);
-            MKCoordinateRegion region = MKCoordinateRegionMake(placemark.location.coordinate, span);
-            [self.mapView setRegion:region animated:YES];
-            
-            NSLog(@"%@", mapitem);
-            NSLog(@"%@", _address);
+                MKCoordinateSpan span = MKCoordinateSpanMake(max.latitude - min.latitude, max.longitude - min.longitude);
+                MKCoordinateRegion region = MKCoordinateRegionMake(placemark.location.coordinate, span);
+                [self.mapView setRegion:region animated:YES];
+                
+                NSLog(@"%@", mapitem);
+                NSLog(@"%@", _address);
         }];
         
     }
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
-{
-    if (annotation == self.mapView.userLocation)
-    {
-        return nil;
-    }
-    MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
-    pin.image = [UIImage imageNamed:@"ic_parks_pressed"];
-    pin.canShowCallout = YES;
-    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    
-    return pin;
-}
+//- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+//{
+//    if (annotation == self.mapView.userLocation)
+//    {
+//        return nil;
+//    }
+//    MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
+//    pin.image = [UIImage imageNamed:@"ic_parks_pressed"];
+//    pin.canShowCallout = YES;
+//    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+//    
+//    return pin;
+//}
+//
+//- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+//{
+//    [self performSegueWithIdentifier:@"showDogPark" sender:view];
+//}
 
 //Getting users from Parse
 -(void)getUsersFromParse
@@ -192,13 +198,6 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
     }];
     
 }
-
-
-- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
-{
-    [self performSegueWithIdentifier:@"showDogPark" sender:view];
-}
-
 
 #pragma mark -- TableView Logic
     
