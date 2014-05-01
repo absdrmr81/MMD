@@ -124,6 +124,7 @@
         for (MKMapItem *item in mapitems) {
             MKPointAnnotation *pin = [MKPointAnnotation new];
             pin.coordinate = item.placemark.location.coordinate;
+            pin.title = item.name;
             [self.mapView addAnnotation:pin];
             
             
