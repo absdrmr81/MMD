@@ -35,13 +35,13 @@
     
     //Add UIBarButton button to Navigation bar programatically
     UIBarButtonItem *flipButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_nav_std"] style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
+    
     //Setting it to left-side of Navi bar
     self.navigationItem.leftBarButtonItem = flipButton;
     
+    //Setting background to Nav bar
     self.view.backgroundColor = [UIColor colorWithRed:255/255.0f green:252/255.0f blue:237/255.0f alpha:1.0f];
-    
     self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:76/255.0f green:76/255.0f blue:66/255.0f alpha:1.0f];
-    
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:255/255.0f green:252/255.0f blue:222/255.0f alpha:1.0f]}];
     
     self.title = @"Profile";
@@ -49,6 +49,8 @@
     //Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
+    
+    //Current user of profile
     self.currentUser = [PFUser currentUser];
 
     if (self.currentUser)
@@ -68,6 +70,8 @@
 
 }
 
+
+//Setting up dog profile
 -(void)viewWillAppear:(BOOL)animated
 {
     self.currentUser = [PFUser currentUser];
@@ -92,6 +96,8 @@
     
 }
 
+
+//enabling profile to pick picture
 - (IBAction)profilePicButtonPressed:(id)sender
 {
     self.picker1 = [[UIImagePickerController new] init];
@@ -101,6 +107,7 @@
     
 }
 
+//enabling camera to take photo
 - (IBAction)cameraRollButtonPressed:(id)sender
 {
     self.picker2 = [[UIImagePickerController alloc] init];
@@ -132,11 +139,14 @@
     [user saveInBackground];
 }
 
+//Log out button
 - (IBAction)logOut:(id)sender
 {
     [PFUser logOut];
     [self performSegueWithIdentifier:@"showLogin" sender:self];
 }
+
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -145,10 +155,10 @@
         [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
     }
 }
-
-- (IBAction)unwindToMapViewController:(UIStoryboardSegue *)sender
-{
-
-}
+//
+//- (IBAction)unwindToMapViewController:(UIStoryboardSegue *)sender
+//{
+//
+//}
 
 @end

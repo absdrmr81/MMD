@@ -9,7 +9,7 @@
 #import "GalleriaViewController.h"
 #import <Parse/Parse.h>
 
-@interface GalleriaViewController () <UIScrollViewDelegate>
+@interface GalleriaViewController () <UIScrollViewDelegate, UIImagePickerControllerDelegate>
 
 {
     UIImageView *imageView;
@@ -23,12 +23,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+
+    
     CGFloat width = 0.0f;
     
-    imageViews = @[[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"gal0"]],
-                   [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"gal1"]],
-                   [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"gal2"]],
-                   [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"gal3"]]];
+//    imageViews = @[[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"gal0"]],
+//                   [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"gal1"]],
+//                   [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"gal2"]],
+//                   [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"gal3"]]];
     for (UIImageView *_imageView in imageViews)
     {
         [myScrollView addSubview:_imageView];
@@ -53,6 +57,9 @@
     //setting up scrollview delegate
     myScrollView.delegate = self;
 }
+
+
+
 
 //returning the view we intend to zoom (doing this is case of multiple views (scrollview need to know specifically which view to scroll)
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView

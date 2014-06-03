@@ -20,6 +20,7 @@
 		26182F7B18FC865E00D5DB61 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26182F5D18FC865E00D5DB61 /* UIKit.framework */; };
 		26182F8318FC865E00D5DB61 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26182F8118FC865E00D5DB61 /* InfoPlist.strings */; };
 		26182F8518FC865E00D5DB61 /* MMDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26182F8418FC865E00D5DB61 /* MMDTests.m */; };
+		262233A01921805F00CFFAD1 /* icon_plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 2622339F1921805F00CFFAD1 /* icon_plus.png */; };
 		26223BD3190AF9040005BD26 /* DogParkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26223BD2190AF9040005BD26 /* DogParkViewController.m */; };
 		26223BDA190C69760005BD26 /* VetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26223BD9190C69760005BD26 /* VetViewController.m */; };
 		268EC9771912247C00B0BD4E /* GalleriaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 268EC9751912247C00B0BD4E /* GalleriaViewController.m */; };
@@ -78,6 +79,7 @@
 		26182F8018FC865E00D5DB61 /* MMDTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MMDTests-Info.plist"; sourceTree = "<group>"; };
 		26182F8218FC865E00D5DB61 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		26182F8418FC865E00D5DB61 /* MMDTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMDTests.m; sourceTree = "<group>"; };
+		2622339F1921805F00CFFAD1 /* icon_plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_plus.png; path = ../../../Desktop/icon_plus.png; sourceTree = "<group>"; };
 		26223BD1190AF9040005BD26 /* DogParkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogParkViewController.h; sourceTree = "<group>"; };
 		26223BD2190AF9040005BD26 /* DogParkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogParkViewController.m; sourceTree = "<group>"; };
 		26223BD8190C69760005BD26 /* VetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VetViewController.h; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				93EB069218FF5AE500562371 /* SignUp/LogIn */,
 				9346806A18FE19BD00B351AD /* Registration */,
 				26182F7118FC865E00D5DB61 /* Images.xcassets */,
+				2622339F1921805F00CFFAD1 /* icon_plus.png */,
 				26182F6018FC865E00D5DB61 /* Supporting Files */,
 			);
 			path = MMD;
@@ -368,6 +371,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				262233A01921805F00CFFAD1 /* icon_plus.png in Resources */,
 				26182F7218FC865E00D5DB61 /* Images.xcassets in Resources */,
 				26182F6418FC865E00D5DB61 /* InfoPlist.strings in Resources */,
 				26182F6D18FC865E00D5DB61 /* Main.storyboard in Resources */,

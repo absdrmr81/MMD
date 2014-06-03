@@ -11,14 +11,15 @@
 
 @interface VetViewController () <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate>
 {
-    NSArray *foundVetLocations;
-    NSString *address;
+    
     CLLocationCoordinate2D coordinate;
     
 }
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property CLLocationManager *locationManager;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) NSString *address;
+@property (strong, nonatomic) NSArray *foundVetLocations;
 
 
 @end
@@ -29,13 +30,14 @@
 - (void)viewDidLoad
 {
     
-    [super viewDidLoad];//move the map to our location
+    [super viewDidLoad];
     
+    //setting background color to Nav bar
     self.view.backgroundColor = [UIColor colorWithRed:255/255.0f green:252/255.0f blue:230/255.0f alpha:1.0f];
     self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:76/255.0f green:76/255.0f blue:66/255.0f alpha:1.0f];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:255/255.0f green:252/255.0f blue:230/255.0f alpha:1.0f]}];
 
-    
+    //create span
     MKCoordinateSpan span;
     CLLocationCoordinate2D start;
     
@@ -44,6 +46,7 @@
     region.span = span;
     region.center = start;
     
+    //show user within map
     [self.mapView setRegion:region animated:YES];
     self.mapView.showsUserLocation = YES;
     
@@ -57,10 +60,11 @@
     
     //Add UIBarButton button to Navigation bar programatically
     UIBarButtonItem *flipButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_nav_std"] style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
+    
     //Setting it to left-side of Navi bar
     self.navigationItem.leftBarButtonItem = flipButton;
 
-    
+    //implenting swipe gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     self.locationManager = [CLLocationManager new];
@@ -71,7 +75,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    //Automatically search for Vets in area
+    //Updates user location
     [self.locationManager startUpdatingLocation];
 }
 
@@ -108,6 +112,7 @@
     }];
 }
 
+//Sends request to search for nearby vets
 -(void)findVetLocations: (CLPlacemark *)placemark
 {
     MKLocalSearchRequest *request = [MKLocalSearchRequest new];
@@ -121,13 +126,14 @@
         NSArray   *mapitems = response.mapItems;
         MKMapItem *mapitem  = mapitems.firstObject;
         
-        
-        foundVetLocations = mapitems;
+        //Reloads data in tableview
+        _foundVetLocations = mapitems;
         [self.myTableView reloadData];
         
         CLLocationCoordinate2D min, max;
         min = max = placemark.location.coordinate;
-        //Setting annotations 
+        
+        //Setting annotations
         for (MKMapItem *item in mapitems) {
             MKPointAnnotation *pin = [MKPointAnnotation new];
             pin.coordinate = item.placemark.location.coordinate;
@@ -148,7 +154,7 @@
         [self.mapView setRegion:region animated:YES];
 
         NSLog(@"%@", mapitem);
-        NSLog(@"%@", address);
+        NSLog(@"%@", _address);
         
         
     }];
@@ -160,13 +166,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return foundVetLocations.count;
+    return _foundVetLocations.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCellID"];
-    MKMapItem *vetLocations = foundVetLocations[indexPath.row];
+    MKMapItem *vetLocations = _foundVetLocations[indexPath.row];
   
     cell.textLabel.text = vetLocations.name;
 //    cell.detailTextLabel.text = vetLocations.address;
@@ -198,38 +204,6 @@
 }
 
 
-//- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
-//{
-//    if (annotation == self.mapView.userLocation)
-//    {
-//        return nil;
-//    }
-//    MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
-////    pin.image = [UIImage imageNamed:@"ic_parks_pressed"];
-//    pin.canShowCallout = YES;
-//    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-//    
-//    return pin;
-//}
-
-
-//-(MKAnnotationView *) mapView:(MKMapView *)mapMKMapView viewForAnnotation: (id<MKAnnotation>)annotation
-//{
-//    MKPinAnnotationView *MyPin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
-////    MyPin.pinColor = MKPinAnnotationColorPurple; // <--for coloring purpose
-//    
-////    UIButton *adverButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-//    
-////    [adverButton addTarget:self action:@selector(button:)forControlEvents:UIControlEventTouchUpInside];
-//    
-//    MyPin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-////    MyPin.draggable = YES;
-////    MyPin.highlighted = YES;
-////    MyPin.animatesDrop  = TRUE;
-//    MyPin.canShowCallout  = YES;
-//    
-//    return MyPin;
-//}
 
 
 

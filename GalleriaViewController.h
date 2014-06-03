@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface GalleriaViewController : UIViewController <UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-
+@property GalleriaViewController *galleriaController;
+@property UIImagePickerController *photoLibrary;
 @end

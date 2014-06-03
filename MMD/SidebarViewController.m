@@ -46,14 +46,8 @@
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     UINavigationController *destViewController = (UINavigationController*)segue.destinationViewController;
     destViewController.title = [[_menuItems objectAtIndex:indexPath.row] capitalizedString];
-//    
-//    // Set the photo if it navigates to the PhotoView
-//    if ([segue.identifier isEqualToString:@"showPhoto"]) {
-//        PhotoViewController *photoController = (PhotoViewController*)segue.destinationViewController;
-//        NSString *photoFilename = [NSString stringWithFormat:@"%@_photo.jpg", [_menuItems objectAtIndex:indexPath.row]];
-//        photoController.photoFilename = photoFilename;
-//    }
-//
+    
+
     
     //Allow tabs to swing back and forth
     if ( [segue isKindOfClass: [SWRevealViewControllerSegue class]] ) {
@@ -67,8 +61,6 @@
         };
     
     }
-    
-    
     
 }
 

@@ -30,9 +30,11 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
 {
     [super viewDidLoad];
     
+    //Applying color to Nav bar
     self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:76/255.0f green:76/255.0f blue:66/255.0f alpha:1.0f];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:255/255.0f green:252/255.0f blue:230/255.0f alpha:1.0f]}];
 
+    //create span
     MKCoordinateSpan span;
     CLLocationCoordinate2D start;
     
@@ -54,6 +56,7 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
 
     //Add UIBarButton button to Navigation bar programatically
     UIBarButtonItem *flipButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_nav_std"] style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
+    
     //Setting it to left-side of Navi bar
     self.navigationItem.leftBarButtonItem = flipButton;
 
@@ -63,12 +66,13 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
     self.locationManager = [CLLocationManager new];
     self.locationManager.delegate = self;
     
+    //grabbing users from parse database
     [self getUsersFromParse];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    //Automatically search for Dog Parks in area w/o button pressed
+    //Automatically searches for Dog Parks within area
     [self.locationManager startUpdatingLocation];
 
 }
@@ -107,6 +111,7 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
 }
 
 
+//Making call to request Dog parks within span.
 - (void)foundDogParks: (CLPlacemark *)placemark
     {
         MKLocalSearchRequest *request = [MKLocalSearchRequest new];
@@ -126,7 +131,7 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
             CLLocationCoordinate2D min, max;
             min = max = placemark.location.coordinate;
             
-            //Setting annotations
+            //Setting annotations/pins
             for (MKMapItem *item in mapitems)
             {
                 MKPointAnnotation *pin = [MKPointAnnotation new];
@@ -141,6 +146,8 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
                 max.longitude = MAX(pin.coordinate.longitude, min.longitude);
                 
             }
+            
+            
             
                 MKCoordinateSpan span = MKCoordinateSpanMake(max.latitude - min.latitude, max.longitude - min.longitude);
                 MKCoordinateRegion region = MKCoordinateRegionMake(placemark.location.coordinate, span);
@@ -158,31 +165,13 @@ typedef void (^MyCompletion)(NSArray* objects, NSError* error);
     
 }
 
-//- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
-//{
-//    if (annotation == self.mapView.userLocation)
-//    {
-//        return nil;
-//    }
-//    MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
-//    pin.image = [UIImage imageNamed:@"ic_parks_pressed"];
-//    pin.canShowCallout = YES;
-//    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-//    
-//    return pin;
-//}
-//
-//- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
-//{
-//    [self performSegueWithIdentifier:@"showDogPark" sender:view];
-//}
 
 //Getting users from Parse
 -(void)getUsersFromParse
 {
     [self getUserFromParse:^(NSArray *objects, NSError *error)
     {
-//        __weak DogParkViewController* dvc = self;
+
         _tempUsers = objects;
         
     }];

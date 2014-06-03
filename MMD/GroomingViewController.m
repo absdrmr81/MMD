@@ -14,13 +14,11 @@
 
 
 @interface GroomingViewController () <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate>
-{
-    NSArray *foundGroomer;
-    NSString *address;
-}
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property (strong, nonatomic) PFGeoPoint *userLocation;
+@property (strong, nonatomic) NSArray *foundGroomer;
+@property (strong, nonatomic) NSString *address;
 @property CLLocationManager *locationManager;
 
 @end
@@ -123,7 +121,7 @@
         NSArray   *mapitems = response.mapItems;
         MKMapItem *mapitem  = mapitems.firstObject;
         
-        foundGroomer = mapitems;
+        _foundGroomer = mapitems;
         [self.myTableView reloadData];
         
         CLLocationCoordinate2D min, max;
@@ -149,7 +147,7 @@
             [self.mapView setRegion:region animated:YES];
         
             NSLog(@"%@", mapitem);
-            NSLog(@"%@", address);
+            NSLog(@"%@", _address);
     }];
     
 }
@@ -173,45 +171,26 @@
     [self performSegueWithIdentifier:@"showGroomers" sender:view];
 }
 
-//- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
-//{
-//    if (annotation == self.mapView.userLocation)
-//    {
-//        return nil;
-//    }
-//    MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
-//    pin.image = [UIImage imageNamed:@"ic_grooming_pressed"];
-//    pin.canShowCallout = YES;
-//    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-//    
-//    return pin;
-//}
-//
-//- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
-//{
-//    [self performSegueWithIdentifier:@"showGroomers" sender:view];
-//}
-
 
 #pragma mark -- TableView Logic
 
-
+//setting rows
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return foundGroomer.count;
+    return _foundGroomer.count;
 }
 
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell"];
-    MKMapItem *parkLocations = foundGroomer[indexPath.row];
+    MKMapItem *parkLocations = _foundGroomer[indexPath.row];
     
     
     cell.textLabel.text = parkLocations.name;
     cell.detailTextLabel.text = parkLocations.name;
     
-    //Showing Address in subtitle in TableView cell
+    //Showing Address in subtitle in cell
     cell.detailTextLabel.text = [[parkLocations.placemark.addressDictionary objectForKey:@"FormattedAddressLines"]
                                  componentsJoinedByString:@"\n"];
     
